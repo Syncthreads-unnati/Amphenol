@@ -9,6 +9,7 @@ import {
 import InputSection from "./components/inputSection/inputSection";
 import DefectTable from "./components/defectTable/defectTable";
 import Defects from "./components/defects/defects";
+import ComponentDashboard from "./components/componant-dashboard/component-dashboard";
 function App() {
 
   // const ErrorPage = () => {
@@ -28,6 +29,7 @@ function App() {
         <Navbar />
         <InputSection />
         <Defects />
+        <ComponentDashboard/>
         </>
       ),
 

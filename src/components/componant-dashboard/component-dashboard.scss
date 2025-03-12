@@ -1,0 +1,80 @@
+.dashboard-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  
+      .live-button {
+        background-color: #8bc34a;
+        color: white;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 12px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  
+    .content {
+      display: flex;
+      gap: 20px;
+  
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+  
+        .image-item {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          position: relative;
+  
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+  
+          .overlay-text {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(0, 255, 0, 0.8);
+            color: white;
+            font-size: 10px;
+            padding: 2px 4px;
+            border-radius: 3px;
+          }
+        }
+      }
+  
+      .defect-table {
+        width: 50%;
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+        background: white;
+  
+        th, td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+  
+        th {
+          background: #eee;
+        }
+  
+        .status-icon {
+          color: #4caf50;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
