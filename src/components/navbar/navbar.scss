@@ -1,0 +1,86 @@
+
+@import "../../styles/mixins.scss";
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7a9a01; // Greenish background
+    padding: 10px;
+    width: 1080px;
+    height: 70px;
+    padding-inline: 34px;
+    .nav-left {
+      display: flex;
+      gap: 10px;
+      background-color: #555;
+      margin-block: 20px; 
+    span{
+        font-family: "Roboto", sans-serif;
+      }
+      .live-btn {
+        background: #222;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+  
+      .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #555;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+    }
+  
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+     
+      .icon-container {
+        background: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+  
+      .user-badge {
+        background: navy;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+  
+      .battery-icon {
+        // background: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+  
+      .time {
+        color: white;
+        text-align: right;
+        font-size: 14px;
+        font-weight: lighter;
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+  

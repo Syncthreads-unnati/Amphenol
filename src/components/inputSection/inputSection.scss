@@ -1,0 +1,119 @@
+.component-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    padding-inline: 2rem;
+    background: #f9f9f9;
+    width: 1080px;
+    .control-container{
+      width: 60%;  
+    }
+  
+    .controls {
+      display: flex;
+      gap: 1.5rem;
+      width: 100%;  
+      input,
+      select {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      .input-component {
+        width: 30%;
+      }
+      .select-component {
+        width: 35%;
+      }
+      .stop-button {
+        background: red;
+        color: white;
+        padding: 0.5rem 2.3rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        
+        &:hover {
+          background: darkred;
+        }
+      }
+    }
+  
+    .info-cards {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background: white;
+        padding: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 0%;
+        min-width: 120px;
+        height: 100px;
+        .label {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            color: grey;
+            // padding: 5px 8px;
+            font-size: 0.76rem;
+            font-weight: lighter;
+            border-radius: 4px;
+            width: 100%;
+            justify-content: center;
+          }
+        .value {
+          color: black;  
+          font-size: 1.5rem;
+          font-weight: lighter;
+        }
+
+      }
+
+    }
+  
+    .image-section {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      width: 40%;  
+      padding:1rem;
+      .image-wrapper {
+        // position: relative;
+        display: flex;
+        img {
+          width: 100%;
+          height: 100%;
+          // border-radius: 8px;
+        }
+  
+        .label {
+            // height: 100%;  
+            // position: absolute;
+            // right: 5px;
+            // top: 0;
+            background: #6b6b4d;
+            color: white;
+            padding: 10px;
+            writing-mode: vertical-rl;
+            font-size: 0.8rem;
+            font-weight: bold;
+            // border-radius: 4px;
+            word-wrap: break-word;
+            transform: rotate(-180deg);
+            text-transform: capitalize;
+          }
+      }
+    }
+  }
