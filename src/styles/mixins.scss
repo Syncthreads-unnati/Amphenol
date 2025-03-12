@@ -1,0 +1,27 @@
+/* 
+  mediaPoints
+  tablet-port 900
+  tablet-block 1080
+  desktop 1920
+
+  1 em = 16 px
+*/
+
+@mixin respond($breakpoint){
+ 
+    @if $breakpoint == tab-port {
+      @media screen and (max-width: 56.25em) and (max-height: 120em) {
+          @content; 
+      }
+    }
+    @if $breakpoint == tab-block {
+      @media screen and (max-width: 67.5em) and (max-height: 120em) {
+          @content; 
+      }
+    }
+    @if $breakpoint == desktop {
+      @media screen and (max-width: 120em) and (max-height: 120em) {
+          @content; 
+      }
+    }
+ }
