@@ -5,7 +5,6 @@ import DefectTable from "./defectsType";
 import "./component-dashboard.scss";
 
 const ComponentDashboard = () => {
-  const images = Array(12).fill({ src: "https://via.placeholder.com/100", overlayText: "AI: 95%" });
 
   const defects = [
     { name: "Contact Damage", status: true, probability: 95 },
@@ -23,7 +22,7 @@ const ComponentDashboard = () => {
     <div className="dashboard-container">
       <Header />
       <div className="content">
-        <ImageGrid images={images} />
+        <ImageGrid />
         <DefectTable defects={defects} />
       </div>
     </div>

@@ -9,15 +9,20 @@
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
-  
+      
+      // border-bottom: 2px solid var(--spanish-gray);
       .live-button {
         background-color: #8bc34a;
         color: white;
         border: none;
         padding: 5px 12px;
+        padding-inline: 25px;
         border-radius: 12px;
         font-size: 14px;
         cursor: pointer;
+      }
+      .header-bottom {
+        border-bottom: 2px solid var(--spanish-gray);
       }
     }
   
@@ -26,25 +31,24 @@
       gap: 20px;
   
       .image-grid {
+        width: 50%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, 156.86px);
         gap: 10px;
-  
+        
         .image-item {
           border: 1px solid #ccc;
           border-radius: 5px;
-          position: relative;
+          // width: 156.86px;
+          // height: 162.87px;
   
           img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
           }
   
           .overlay-text {
-            position: absolute;
-            top: 5px;
-            left: 5px;
             background-color: rgba(0, 255, 0, 0.8);
             color: white;
             font-size: 10px;
