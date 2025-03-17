@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./toggleButton.scss"; // Import SCSS
 
-const ToggleButton = () => {
-  const [activeTab, setActiveTab] = useState("pie");
+const ToggleButton = ({activeTab, setActiveTab}) => {
+  // const [activeTab, setActiveTab] = useState("pie");
     
   return (
     <div className="toggle-container">

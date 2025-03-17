@@ -6,28 +6,35 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 18px;
-      font-weight: bold;
+      color: var(--black);
+      font-size: 1.5em;
+      font-weight: lighter;
       margin-bottom: 10px;
       
       // border-bottom: 2px solid var(--spanish-gray);
       .live-button {
-        background-color: #8bc34a;
+        background-color: rgba(165, 186, 64, 1);
         color: white;
         border: none;
         padding: 5px 12px;
         padding-inline: 25px;
-        border-radius: 12px;
-        font-size: 14px;
+        border-radius: 15px;
+        font-size: 1em;
         cursor: pointer;
       }
-      .header-bottom {
-        border-bottom: 2px solid var(--spanish-gray);
-      }
+      
     }
-  
+    .header-bottom {
+      border-bottom: 2px solid var(--spanish-gray);
+    }
+    .header-arrow{
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
     .content {
       display: flex;
+      padding: 1.6em;
       gap: 20px;
   
       .image-grid {

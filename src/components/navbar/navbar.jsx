@@ -2,23 +2,32 @@ import live from "../../assets/image/live.png";
 import history from "../../assets/image/history.png";
 import setting from "../../assets/image/setting.png";
 import logo from "../../assets/image/logo.png";
-
 import battery from "../../assets/image/battery.png";
 import "./navbar.scss";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+
 
 const Navbar = () => {
+  const [tab,setTab] = useState("live");
+  const navigate = useNavigate();
+  const handleTabChange = (value)=>{
+    setTab(value);
+    navigate("/history")
+  }
+
   return (
     <nav className="navbar">
       <nav className="nav-left">
-        <button className="live-btn">
+        <button className={tab == "live"?`click-btn`:`nav-item`} onClick={()=>handleTabChange("live")}>
         <span className="icon"><img src={live} alt="live" /></span> 
         <span>Live</span>
         </button>
-        <button className="nav-item">
+        <button className={tab == "history"?`click-btn`:`nav-item`} onClick={()=>handleTabChange("history")}>
           <img src={history} alt="history" />
           <span>History</span>
         </button>
-        <button className="nav-item">
+        <button className={tab == "setting"?`click-btn`:`nav-item`} onClick={()=>handleTabChange("setting")}>
           <img src={setting} alt="setting" />
           <span>Setting</span>
         </button>
