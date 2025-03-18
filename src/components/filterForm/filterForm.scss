@@ -1,0 +1,92 @@
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: flex-start; /* Align items to start */
+  
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      min-width: 150px;
+      position: relative;
+      
+      label {
+        font-size: 14px;
+        color: #333;
+      }
+  
+      input,
+      select {
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 150px;
+        appearance: none;
+        
+      }
+  
+      select {
+        background: url("../../assets/image/down-arrow.png") no-repeat right 10px center;
+        background-size: 14px;
+        width: 200px;
+      }
+  
+      /* Hide default browser icons */
+      input[type="date"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+  
+      input[type="date"],
+      input[type="time"] {
+        padding-right: 35px; /* Space for icon */
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+  
+      input[type="date"] {
+        background-image: url("../../assets/image/calendar.png");
+      }
+  
+      input[type="time"] {
+        background-image: url("../../assets/image/clock.png");
+      }
+    }
+  
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  
+      label {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  
+    .apply-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+  
+      &:hover {
+        background: #0056b3;
+      }
+    }
+  }
+  

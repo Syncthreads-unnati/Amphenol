@@ -1,0 +1,144 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    gap: 20px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+  
+    /* Stats Section */
+    .stats-container {
+      display: flex;
+    //   align-items: center;
+      gap: 1rem;
+      width: auto;
+    //   justify-content: center;
+  
+      .stat-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        min-width: 12em;
+        text-align: center;
+        
+        p {
+          font-size: 14px;
+          font-weight: bold;
+          color: #555;
+        }
+  
+        h2 {
+          font-size: 22px;
+          font-weight: bold;
+          margin: 5px 0;
+        }
+      }
+  
+      .export-btn {
+        background: #775ce5;
+        color: white;
+        padding: 30px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s ease;
+        font-weight: bold;
+        text-transform: uppercase;
+        min-width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 3em;
+        &:hover {
+          background: #654bcc;
+        }
+      }
+    }
+  
+    /* Defect Summary */
+    .defect-summary {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      gap: 20px;
+  
+      .defect-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        width: 50%;
+        min-width: 300px;
+        justify-content: space-between;
+        .defect-content {
+            display: flex;
+            // flex-direction: column;
+            gap: 15px;
+        }
+        .label {
+        //   font-weight: bold;
+          letter-spacing: .01em;
+          font-size: 1.2em;
+          font-weight: lighter;
+        }
+        .defect-name {
+            color: var(--black-olive);
+            letter-spacing: .01em;
+            font-size: 1.2em;
+            font-weight: lighter;
+        }
+        .count {
+          font-size: 1.5em;
+          font-weight: bold;
+          color:var(--black)
+        }
+      }
+  
+      .max-defect {
+        border: 1px solid red;
+        color: red;
+      }
+  
+      .min-defect {
+        border: 1px solid var(--sync-green-3);
+        color: var(--sync-green-3);
+      }
+    }
+  
+    /* Tab Section */
+    .tabs {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+      width: 40%;
+      background: #e0e0e0;
+  
+      .tab-btn {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: #e0e0e0;
+        // background-color: inherit;
+        &.active {
+          background: var(--culture);
+          color: var(--sync-green-2);
+        }
+      }
+    }
+  }
+  

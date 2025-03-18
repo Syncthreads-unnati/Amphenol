@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
-import Navbar from "./components/navbar/navbar";
-import { createBrowserRouter, RouterProvider, Outlet, useNavigate } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Navbar from "./pages/navbar/navbar";
 import InputSection from "./components/inputSection/inputSection";
 import Defects from "./components/defects/defects";
 import ComponentDashboard from "./components/componant-dashboard/component-dashboard";
-import History from "./components/history/history";
+import History from "./pages/history/history";
 
 function ErrorPage() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate("/", { replace: true });
-  }, [navigate]);
+  React.useEffect(() => {
+    window.location.replace("/"); // Redirect to home page
+  }, []);
 
   return null;
 }
@@ -23,10 +22,11 @@ const Layout = () => (
   </>
 );
 
+// Define routes
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, // Wrap all routes with Navbar
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <><InputSection /><Defects /><ComponentDashboard /></> },
@@ -36,6 +36,11 @@ const appRouter = createBrowserRouter([
 ]);
 
 function App() {
+  // Redirect to "/" if the user reloads on another path
+  if (window.location.pathname !== "/") {
+    window.location.replace("/");
+  }
+
   return <RouterProvider router={appRouter} />;
 }
 

@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import "./toggleButton.scss"; // Import SCSS
 
-const ToggleButton = ({activeTab, setActiveTab}) => {
+const ToggleButton = ({toggledata,activeTab, setActiveTab}) => {
   // const [activeTab, setActiveTab] = useState("pie");
     
   return (
     <div className="toggle-container">
       <div className="toggle-button">
-        <button
-          className={activeTab === "pie" ? "active" : ""}
-          onClick={() => setActiveTab("pie")}
-        >
-          PIE CHART
-        </button>
-        <button
-          className={activeTab === "graph" ? "active" : ""}
-          onClick={() => setActiveTab("graph")}
-        >
-          GRAPH
-        </button>
+        {
+          toggledata.map((data, index) => (
+            <button
+              key={index}
+              className={activeTab === data.name ? "active" : ""}
+              onClick={() => setActiveTab(data.name)}
+            >
+              {data.name.toUpperCase()}
+            </button>
+          ))
+        }
       </div>
     </div>
   );

@@ -1,0 +1,78 @@
+.table-container {
+    width: 100%;
+    overflow-y: auto;
+    // font-family: Arial, sans-serif;
+    padding: 0.3em;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+  
+      th, td {
+        border: 2px solid #ccc;
+        padding: 8px;
+        min-width: 0.5em;
+      }
+  
+      /* Header Styling */
+      thead {
+        th {
+          background-color: #3F4D5C; /* Dark gray */
+          color: var(--sync-light-green-2); /* White text */
+          font-weight: bold;
+          position: relative;
+        }
+      }
+  
+      /* Totals Row */
+      thead tr:nth-child(2) th {
+        background-color: #d9d9d9; /* Light gray */
+        color: black;
+      }
+  
+      /* Min/Max Highlights */
+      .highlight-min {
+        background-color: #e6f7d4;
+        color: green;
+        font-weight: bold;
+      }
+  
+      .highlight-max {
+        background-color: #f7d4d4;
+        color: red;
+        font-weight: bold;
+      }
+  
+      .min-tag, .max-tag {
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+      /* Row Styling */
+      tbody tr:nth-child(odd) {
+        background-color: #f0f0f0; /* Light gray */
+      }
+  
+      tbody tr:nth-child(even) {
+        background-color: #ffffff; /* White */
+      }
+  
+      /* ID Styling */
+      .id-cell {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+  
+      /* Red Dots */
+      .dot {
+        color: red;
+        font-size: 16px;
+      }
+    }
+  }
+  

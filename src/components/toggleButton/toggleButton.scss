@@ -21,7 +21,7 @@
         transition: all 0.3s ease;
   
         &.active {
-          color: #8bc34a; // Green color for active button
+          color: var(--sync-green-2); // Green color for active button
           background-color: var(--culture);
           border-radius: 10px;
         }

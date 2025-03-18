@@ -25,35 +25,36 @@ const InputSection = () => {
         <div className="info-cards">
           <div className="card">
             <div className="label">
-             <span> <img src={lot} alt="Lot" /></span>
-              <span>LOT</span>
+             {/* <span> <img src={lot} alt="Lot" /></span> */}
+              <span>📦 LOT</span>
+
             </div>
             <div className="value">1</div>
           </div>
           <div className="card">
             <div className="label">
-              <span>
+              {/* <span>
                 <img src={count} alt="Count" />
-              </span>
-              <span> TOTAL COUNT</span>
+              </span> */}
+              <span>🔧 TOTAL COUNT</span>
             </div>
             <div className="value">1600</div>
           </div>
           <div className="card">
             <div className="label">
-              <span>
+              {/* <span>
                 <img src={count} alt="Count" />
-              </span>
-              <span>DEFECT</span>
+              </span> */}
+              <span>⚠️ DEFECT COUNT</span>
             </div>
             <div className="value">1000</div>
           </div>
           <div className="card">
             <div className="label">
-              <span>
+              {/* <span>
                 <img src={count} alt="Count" />
-              </span>
-              <span>OK</span>
+              </span> */}
+              <span>✅ OK COUNT</span>
             </div>
             <div className="value">600</div>
           </div>

@@ -7,27 +7,41 @@ import "./navbar.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-
 const Navbar = () => {
-  const [tab,setTab] = useState("live");
+  const [tab, setTab] = useState("live");
   const navigate = useNavigate();
-  const handleTabChange = (value)=>{
+  const handleTabChange = (value) => {
     setTab(value);
-    navigate("/history")
-  }
+    if (value == "live") {
+      navigate("/");
+    } else {
+      navigate(`/${value}`);
+    }
+  };
 
   return (
     <nav className="navbar">
       <nav className="nav-left">
-        <button className={tab == "live"?`click-btn`:`nav-item`} onClick={()=>handleTabChange("live")}>
-        <span className="icon"><img src={live} alt="live" /></span> 
-        <span>Live</span>
+        <button
+          className={tab == "live" ? `click-btn` : `nav-item`}
+          onClick={() => handleTabChange("live")}
+        >
+          <span className="icon">
+            <img src={live} alt="live" />
+          </span>
+          <span>Live</span>
         </button>
-        <button className={tab == "history"?`click-btn`:`nav-item`} onClick={()=>handleTabChange("history")}>
+        <button
+          className={tab == "history" ? `click-btn` : `nav-item`}
+          onClick={() => handleTabChange("history")}
+        >
           <img src={history} alt="history" />
           <span>History</span>
         </button>
-        <button className={tab == "setting"?`click-btn`:`nav-item`} onClick={()=>handleTabChange("setting")}>
+        <button
+          className={tab == "setting" ? `click-btn` : `nav-item`}
+          onClick={() => handleTabChange("setting")}
+        >
           <img src={setting} alt="setting" />
           <span>Setting</span>
         </button>
@@ -36,9 +50,7 @@ const Navbar = () => {
         <div className="icon-container">
           <img src={logo} alt="logo" />
         </div>
-        <div className="user-badge">
-          NV
-        </div>
+        <div className="user-badge">NV</div>
         <div className="battery-icon">
           <img src={battery} alt="battery" />
         </div>

@@ -4,14 +4,15 @@ import PieChart from "../piechart/piechart";
 import "./defects.scss";
 import ToggleButton from "../toggleButton/toggleButton";
 import DefectsChart from "../defects-barchart/defectsChart";
+import { toggleData } from "../../constants/constants";
 const Defects = () => {
-    const [activeTab, setActiveTab] = useState("pie");
+    const [activeTab, setActiveTab] = useState("pie chart");
   return (
     <div className="defects-chartOptions">
-      <ToggleButton activeTab={activeTab} setActiveTab={setActiveTab}/>
+      <ToggleButton toggledata={toggleData} activeTab={activeTab} setActiveTab={setActiveTab}/>
       <div className="defects-container">
         {
-        activeTab == "pie" ?
+        activeTab == "pie chart" ?
           <>
           <div className="defects-chart">
           <PieChart />
