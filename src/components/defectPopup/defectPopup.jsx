@@ -2,7 +2,6 @@ import React from "react";
 import "./defectPopup.scss";
 
 const DefectPopup = ({ isOpen, onClose, componentData,componentImage }) => {
-    console.log(componentImage);
     
   if (!isOpen) return null;
 
