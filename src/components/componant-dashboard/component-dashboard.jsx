@@ -7,13 +7,13 @@ import DefectPopup from "../defectPopup/defectPopup";
 import {mockData} from "../../constants/constants";
 import {defects} from "../../constants/constants";
 
-const ComponentDashboard = () => {
+const ComponentDashboard = ({popup}) => {
  const [isPopupOpen, setPopupOpen] = useState(false);
   const [componentImage, setComponentImage] = useState(null);
 
   return (
     <div className="dashboard-container">
-      <Header />
+     {!popup?  <Header /> : null} 
       <div className="content">
         <ImageGrid setPopupOpen={setPopupOpen} setComponentImage={setComponentImage}/>
         <DefectTable defects={defects} />

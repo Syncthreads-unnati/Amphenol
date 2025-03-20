@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./tableComponent.scss";
 import { tableData } from "../../constants/constants";
+import { mockData } from "../../constants/constants";
 import DefectPopup from "../defectPopup/defectPopup";
-
+import HistoryPopup from "../history-popup/historyPopup";
 
 const TableComponent = () => {
+ const [isPopupOpen, setPopupOpen] = useState(false);
+
   return (
     <div className="table-container">
       <table>
@@ -28,7 +31,7 @@ const TableComponent = () => {
           {tableData.rows.map((row, rowIndex) => (
             <tr key={rowIndex}>
               <td>{row.lot}</td>
-              <td className="id-cell">{row.id}</td>
+              <td className="id-cell" onClick={()=>setPopupOpen(!isPopupOpen)}>{row.id}</td>
               {row.values.map((value, cellIndex) => (
                 <td key={cellIndex} className={value ? "dot" : ""}>
                   {value}
@@ -38,7 +41,7 @@ const TableComponent = () => {
           ))}
         </tbody>
       </table>
-      <DefectPopup/>
+      <HistoryPopup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
     </div>
   );
 };

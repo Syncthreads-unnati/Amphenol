@@ -3,7 +3,7 @@ const Dashboard = () => {
     <>
       <InputSection />
       <Defects />
-      <ComponentDashboard />
+      <ComponentDashboard popup={false}/>
     </>
   );
 };
