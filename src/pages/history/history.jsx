@@ -8,8 +8,11 @@ const History = () => {
   const [activeTab, setActiveTab] = useState("list");
   return (
     <>
-      <FilterForm />
-      <HistoryDashboard />
+      <div style={{ display: "flex" }}>
+        <FilterForm />
+        <HistoryDashboard />
+      </div>
+
       <ToggleButton
         toggledata={historytoggleData}
         activeTab={activeTab}

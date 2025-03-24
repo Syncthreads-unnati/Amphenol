@@ -10,6 +10,16 @@
     // width: 1080px;
     height: 70px;
     padding-inline: 34px;
+    .nav-icon{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      .icon-container {
+        // background: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    
     .nav-left {
       display: flex;
       gap: 10px;
@@ -47,7 +57,7 @@
 
       
     }
-  
+  }
     .nav-right {
       display: flex;
       align-items: center;

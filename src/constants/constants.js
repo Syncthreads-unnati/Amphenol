@@ -83,27 +83,47 @@ export const historytoggleData = [
 // Table data
 export const tableData = {
   headers: [
-    "Lot",
-    "ID",
-    "Contact Damage",
-    "Contact Direction Change",
-    "Contact Plating Peel off (Pocket)",
-    "Contact Plating Peel off (Head)",
-    "DE Flashing",
-    "DAP Powder",
-    "Deep Gate",
-    "Foreign Material",
-    "Metal Chip Off Molded",
-    "Short Contact",
-    "Short Mold",
-    "Vertical Flash",
-    "Machine Tool Mark Pocket",
+    "Batch Code",
+    "Count",
+    "CD",
+    "CDC",
+    "CPPO(P)",
+    "CPPO(H)",
+    "DF",
+    "DP",
+    "DG",
+    "FM",
+    "MCOM",
+    "SC",
+    "SM",
+    "VF",
+    "MTMP",
   ],
-  totals: [1400, 50, 50, 20, 120, 60, 40, 140, 60, 60, 45, 45, 84, 56, 56], // Example total values
-  minMax: { min: { column: 4, value: 20 }, max: { column: 7, value: 140 } }, // Min/Max highlights
+  // totals: [1400, 50, 50, 20, 120, 60, 40, 140, 60, 60, 45, 45, 84, 56, 56], // Example total values
+  // minMax: { min: { column: 4, value: 20 }, max: { column: 7, value: 140 } }, // Min/Max highlights
   rows: Array.from({ length: 37 }, (_, i) => ({
     lot: 1,
     id: (i + 1).toString().padStart(4, "0"),
     values: Array.from({ length: 13 }, () => (Math.random() > 0.7 ? "●" : "")), // Randomized values
   })),
 };
+export const batchData = [
+  {
+    code: "Batch 1",
+    count: 1400,
+    data: [50, 20, 120, 140, 60, 40, 45, 45, 45, 84, 36, 56,56],
+    details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
+  },
+  {
+    code: "Batch 2",
+    count: 1400,
+    data: [50,20, 120, 160, 60, 40, 45, 45, 45, 84, 36, 56, 56],
+    details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
+  },
+  {
+    code: "Batch 3",
+    count: 1400,
+    data: [50, 80, 90,  116, 60, 40, 70, 45, 45, 84, 36, 56,56],
+    details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
+  },
+];

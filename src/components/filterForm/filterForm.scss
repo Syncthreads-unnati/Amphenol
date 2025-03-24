@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    margin: 20px;
     padding: 20px;
     background: white;
     border-radius: 8px;
@@ -13,31 +14,32 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
-      min-width: 150px;
+      // min-width: 150px;
       position: relative;
       
       label {
         font-size: 14px;
         color: #333;
       }
-  
+       
       input,
       select {
         padding: 10px 12px;
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 14px;
-        width: 150px;
+        width: 122px;   
         appearance: none;
         
       }
-  
+      
       select {
         background: url("../../assets/image/down-arrow.png") no-repeat right 10px center;
         background-size: 14px;
         width: 200px;
       }
-  
+      
+
       /* Hide default browser icons */
       input[type="date"]::-webkit-calendar-picker-indicator,
       input[type="time"]::-webkit-calendar-picker-indicator {
@@ -60,18 +62,64 @@
         background-image: url("../../assets/image/clock.png");
       }
     }
-  
+    #_batch{
+      max-width: 50px;
+    }
+    .batch-input{
+      max-width: 50px;
+    }  
     .checkbox-group {
       display: flex;
       align-items: center;
-      gap: 15px;
-  
-      label {
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
+      gap: 20px;
+    }
+    
+    /* Custom Checkbox Container */
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    /* Hide Default Checkbox */
+    .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    /* Custom Checkbox */
+    .checkmark {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #007bff;
+      background-color: white;
+      display: inline-block;
+      border-radius: 4px;
+      position: relative;
+    }
+    
+    /* Checkmark when checked */
+    .checkbox-container input:checked + .checkmark {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    
+    /* Add Tick Mark */
+    .checkbox-container input:checked + .checkmark::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
     }
   
     .apply-btn {

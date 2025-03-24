@@ -29,20 +29,25 @@ const FilterForm = () => {
 
   return (
     <form className="filter-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Lot Number</label>
+      <div id="_batch" className="form-group">
+        <label>Batch</label>
         <input
           type="text"
-          name="lotNumber"
-          placeholder="Enter Lot Number"
+          name="Batch"
+          placeholder="0"
           value={filters.lotNumber}
+          className="batch-input"
           onChange={handleChange}
         />
       </div>
 
       <div className="form-group">
         <label>Connector Type</label>
-        <select name="connectorType" value={filters.connectorType} onChange={handleChange}>
+        <select
+          name="connectorType"
+          value={filters.connectorType}
+          onChange={handleChange}
+        >
           <option value="">Connector Type</option>
           <option value="type1">Type 1</option>
           <option value="type2">Type 2</option>
@@ -51,8 +56,13 @@ const FilterForm = () => {
 
       <div className="form-group">
         <label>Defect Type</label>
-        <select name="defectType" value={filters.defectType} onChange={handleChange}>
+        <select
+          name="defectType"
+          value={filters.defectType}
+          onChange={handleChange}
+        >
           <option value="">Defect Type</option>
+          <option value="defect1">All</option>
           <option value="defect1">Defect 1</option>
           <option value="defect2">Defect 2</option>
         </select>
@@ -60,36 +70,70 @@ const FilterForm = () => {
 
       <div className="form-group">
         <label>Start Date</label>
-        <input type="date" name="startDate" value={filters.startDate} onChange={handleChange} />
+        <input
+          type="date"
+          name="startDate"
+          value={filters.startDate}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="form-group start-time">
         <label>Start Time</label>
-        <input type="time" name="startTime" value={filters.startTime} onChange={handleChange} />
+        <input
+          type="time"
+          name="startTime"
+          value={filters.startTime}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="form-group">
         <label>End Date</label>
-        <input type="date" name="endDate" value={filters.endDate} onChange={handleChange} />
+        <input
+          type="date"
+          name="endDate"
+          value={filters.endDate}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="form-group">
         <label>End Time</label>
-        <input type="time" name="endTime" value={filters.endTime} onChange={handleChange} />
+        <input
+          type="time"
+          name="endTime"
+          value={filters.endTime}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="checkbox-group">
-        <label>
-          <input type="checkbox" name="defective" checked={filters.defective} onChange={handleChange} />
+        <label className="checkbox-container">
+          <input
+            type="checkbox"
+            name="defective"
+            checked={filters.defective}
+            onChange={handleChange}
+          />
+          <span className="checkmark"></span>
           DEFECTIVE
         </label>
-        <label>
-          <input type="checkbox" name="nonDefective" checked={filters.nonDefective} onChange={handleChange} />
+        <label className="checkbox-container">
+          <input
+            type="checkbox"
+            name="nonDefective"
+            checked={filters.nonDefective}
+            onChange={handleChange}
+          />
+          <span className="checkmark"></span>
           NON DEFECTIVE
         </label>
       </div>
 
-      <button type="submit" className="apply-btn">Apply Filters</button>
+      <button type="submit" className="apply-btn">
+        Apply Filters
+      </button>
     </form>
   );
 };

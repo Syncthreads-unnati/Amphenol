@@ -10,7 +10,8 @@
   
     /* Stats Section */
     .stats-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
     //   align-items: center;
       gap: 1rem;
       width: auto;
@@ -43,7 +44,8 @@
       .export-btn {
         background: #775ce5;
         color: white;
-        padding: 20px 20px;
+        padding: 10px 20px;
+        width: 100%;
         border-radius: 8px;
         border: none;
         cursor: pointer;
@@ -53,68 +55,71 @@
         text-transform: uppercase;
         min-width: 120px;
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 1em;
-        margin-left: 3em;
+        // margin-left: 3em;
         &:hover {
           background: #654bcc;
         }
       }
+      .back-btn{
+        background: var(--spanish-gray);
+      }
     }
   
     /* Defect Summary */
-    .defect-summary {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 20px;
+    // .defect-summary {
+    //   display: flex;
+    //   justify-content: center;
+    //   width: 100%;
+    //   gap: 20px;
   
-      .defect-box {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14px;
-        padding: 10px 15px;
-        border-radius: 5px;
-        width: 50%;
-        min-width: 300px;
-        justify-content: space-between;
-        .defect-content {
-            display: flex;
-            // flex-direction: column;
-            gap: 15px;
-        }
-        .label {
-        //   font-weight: bold;
-          letter-spacing: .01em;
-          font-size: 1.2em;
-          font-weight: lighter;
-        }
-        .defect-name {
-            color: var(--black-olive);
-            letter-spacing: .01em;
-            font-size: 1.2em;
-            font-weight: lighter;
-        }
-        .count {
-          font-size: 1.5em;
-          font-weight: bold;
-          color:var(--black)
-        }
-      }
+    //   .defect-box {
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 8px;
+    //     font-size: 14px;
+    //     padding: 10px 15px;
+    //     border-radius: 5px;
+    //     width: 50%;
+    //     min-width: 300px;
+    //     justify-content: space-between;
+    //     .defect-content {
+    //         display: flex;
+    //         // flex-direction: column;
+    //         gap: 15px;
+    //     }
+    //     .label {
+    //     //   font-weight: bold;
+    //       letter-spacing: .01em;
+    //       font-size: 1.2em;
+    //       font-weight: lighter;
+    //     }
+    //     .defect-name {
+    //         color: var(--black-olive);
+    //         letter-spacing: .01em;
+    //         font-size: 1.2em;
+    //         font-weight: lighter;
+    //     }
+    //     .count {
+    //       font-size: 1.5em;
+    //       font-weight: bold;
+    //       color:var(--black)
+    //     }
+    //   }
   
-      .max-defect {
-        border: 1px solid red;
-        color: red;
-      }
+    //   .max-defect {
+    //     border: 1px solid red;
+    //     color: red;
+    //   }
   
-      .min-defect {
-        border: 1px solid var(--sync-green-3);
-        color: var(--sync-green-3);
-      }
-    }
+    //   .min-defect {
+    //     border: 1px solid var(--sync-green-3);
+    //     color: var(--sync-green-3);
+    //   }
+    // }
   
     /* Tab Section */
     .tabs {

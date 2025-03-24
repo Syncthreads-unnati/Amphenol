@@ -12,17 +12,19 @@
   
       th, td {
         border: 2px solid #ccc;
-        padding: 8px;
+        // padding: 8px;
         min-width: 0.5em;
       }
   
       /* Header Styling */
       thead {
         th {
+          width: 68px;
           background-color: #3F4D5C; /* Dark gray */
           color: var(--sync-light-green-2); /* White text */
           font-weight: bold;
           position: relative;
+          padding: 2px;
         }
       }
   
@@ -31,27 +33,36 @@
         background-color: #d9d9d9; /* Light gray */
         color: black;
       }
-  
-      /* Min/Max Highlights */
-      .highlight-min {
-        background-color: #e6f7d4;
-        color: green;
+      .batch-header{
+        background-color: #3F4D5C; /* Dark gray */
+        color: var(--black); /* White text */
         font-weight: bold;
-      }
-  
-      .highlight-max {
-        background-color: #f7d4d4;
-        color: red;
-        font-weight: bold;
-      }
-  
-      .min-tag, .max-tag {
-        font-size: 12px;
-        font-weight: bold;
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
+
+        /* Min/Max Highlights */
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+          .maxtag{
+            border: 2px solid red;
+          }
+          .mintag{
+            border: 2px solid #A0C200;
+          }
+          .highlight-max, .highlight-min {
+            font-size: 1em;
+          }
+          .highlight-min {
+            color: #A0C200;
+            font-weight: bold;
+          }
+          .highlight-max {
+            color: red;
+            font-weight: bold;
+          }
       }
   
       /* Row Styling */
