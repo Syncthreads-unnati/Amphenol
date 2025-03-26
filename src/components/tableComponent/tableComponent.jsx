@@ -5,7 +5,27 @@ import HistoryPopup from "../history-popup/historyPopup";
 
 const TableComponent = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
-  const [expandedBatches, setExpandedBatches] = useState({});
+
+  // Ensure all batches are expanded by default
+  const [expandedBatches, setExpandedBatches] = useState(() => {
+    const initialState = {};
+
+    // Ensure all batches from batchData are expanded
+    batchData.forEach((batch) => {
+      initialState[batch.code] = true;
+    });
+
+    // Ensure all batches from tableData are expanded
+    if (tableData?.rows) {
+      const batchSize = 10;
+      tableData.rows.forEach((_, index) => {
+        const batchNumber = Math.floor(index / batchSize) + 1;
+        initialState[batchNumber] = true;
+      });
+    }
+
+    return initialState;
+  });
 
   const toggleBatch = (batchCode) => {
     setExpandedBatches((prev) => ({
@@ -30,12 +50,9 @@ const TableComponent = () => {
         {/* Table Header */}
         <thead>
           <tr>
-            {tableData?.headers?.map((header, index) => {
-              // const isMin = tableData?.minMax?.min?.column === index;
-              // const isMax = tableData?.minMax?.max?.column === index;
-
-              return <th key={index}>{header}</th>;
-            })}
+            {tableData?.headers?.map((header, index) => (
+              <th key={index}>{header}</th>
+            ))}
           </tr>
         </thead>
 
@@ -51,16 +68,23 @@ const TableComponent = () => {
                 <td>{batch.code}</td>
                 <td>{batch.count}</td>
                 {batch?.data?.map((value, index) => {
-                  // Find the max value in the current batch
+                  // Find the max and min value in the current batch
                   const batchMax = Math.max(...batch.data);
                   const batchMin = Math.min(...batch.data);
-                  // Check if the current value is the maximum in the batch
                   const isMax = value === batchMax;
                   const isMin = value === batchMin;
                   return (
                     <td key={index}>
                       <div className={isMax ? "maxtag" : isMin ? "mintag" : ""}>
-                        <span className={isMax ? "highlight-max" : isMin ? "highlight-min" : ""}>
+                        <span
+                          className={
+                            isMax
+                              ? "highlight-max"
+                              : isMin
+                              ? "highlight-min"
+                              : ""
+                          }
+                        >
                           {isMax && "Max"}
                           {isMin && "Min"}
                         </span>
@@ -81,39 +105,40 @@ const TableComponent = () => {
                 className="batch-header"
                 onClick={() => toggleBatch(batchNumber)}
               >
-                <td
-                  colSpan={tableData?.headers?.length}
-                  style={{ cursor: "pointer", fontWeight: "bold" }}
-                >
-                  <span>BATCH {batchNumber}</span>
-                  <span>{expandedBatches[batchNumber] ? "▼" : "►"}</span>
+                <td colSpan={tableData?.headers?.length} className="__batch">
+                  <div className="__batch-container">
+                    <p>BATCH {batchNumber}</p>
+                    <p>{expandedBatches[batchNumber] ? "▼" : "►"}</p>
+                  </div>
                 </td>
               </tr>
 
               {/* Expandable Batch Rows */}
-              {expandedBatches[batchNumber] &&
-                rows.map((row) => (
-                  <tr key={row.id}>
-                    <td>{batchNumber}</td>
-                    <td
-                      className="id-cell"
-                      onClick={() => setPopupOpen(!isPopupOpen)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {row.id}
-                    </td>
-                    {row.values.map((value, cellIndex) => {
-                      // const isMin = tableData?.minMax?.min?.column === cellIndex + 2;
-                      // const isMax = tableData?.minMax?.max?.column === cellIndex + 2;
-
-                      return (
-                        <td key={cellIndex} className="dot">
-                          {value || "●"}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
+              {expandedBatches[batchNumber] && (
+                <tr>
+                  <td colSpan={tableData?.headers?.length}>
+                    <div className="batch-content">
+                      {rows.map((row) => (
+                        <tr key={row.id}>
+                          <td>{batchNumber}</td>
+                          <td
+                            className="id-cell"
+                            onClick={() => setPopupOpen(!isPopupOpen)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            {row.id}
+                          </td>
+                          {row.values.map((value, cellIndex) => (
+                            <td key={cellIndex} className="dot">
+                              {value || "●"}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              )}
             </React.Fragment>
           ))}
         </tbody>

@@ -1,91 +1,116 @@
 .table-container {
+  width: 100%;
+  overflow: visible;
+  padding: 0.3em;
+  position: relative;
+  z-index: 1; /* Ensure lower than popup */
+
+  table {
     width: 100%;
-    overflow: visible;
-    // font-family: Arial, sans-serif;
-    padding: 0.3em;
-    position: relative; 
-    z-index: 1; /* Ensure lower than popup */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-  
-      th, td {
-        border: 2px solid #ccc;
-        // padding: 8px;
-        min-width: 0.5em;
-      }
-  
-      /* Header Styling */
-      thead {
-        th {
-          width: 68px;
-          background-color: #3F4D5C; /* Dark gray */
-          color: var(--sync-light-green-2); /* White text */
-          font-weight: bold;
-          position: relative;
-          padding: 2px;
-        }
-      }
-  
-      /* Totals Row */
-      thead tr:nth-child(2) th {
-        background-color: #d9d9d9; /* Light gray */
-        color: black;
-      }
-      .batch-header{
-        background-color: #3F4D5C; /* Dark gray */
-        color: var(--black); /* White text */
+    border-collapse: collapse;
+    text-align: center;
+
+    th, td {
+      border: 2px solid white;
+      min-width: 0.5em;
+    }
+
+    /* Header Styling */
+    thead {
+      th {
+        width: 68px;
+        background-color: #3f4d5c; /* Dark gray */
+        color: var(--sync-light-green-2); /* Light Green */
         font-weight: bold;
-
-        /* Min/Max Highlights */
-        div {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-          .maxtag{
-            border: 2px solid red;
-          }
-          .mintag{
-            border: 2px solid #A0C200;
-          }
-          .highlight-max, .highlight-min {
-            font-size: 1em;
-          }
-          .highlight-min {
-            color: #A0C200;
-            font-weight: bold;
-          }
-          .highlight-max {
-            color: red;
-            font-weight: bold;
-          }
-      }
-  
-      /* Row Styling */
-      tbody tr:nth-child(odd) {
-        background-color: #f0f0f0; /* Light gray */
-      }
-  
-      tbody tr:nth-child(even) {
-        background-color: #ffffff; /* White */
-      }
-  
-      /* ID Styling */
-      .id-cell {
-        color: blue;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-  
-      /* Red Dots */
-      .dot {
-        color: red;
-        font-size: 16px;
+        position: relative;
+        padding: 2px;
       }
     }
+
+    /* Totals Row */
+    thead tr:nth-child(2) th {
+      background-color: #d9d9d9; /* Light gray */
+      color: black;
+    }
+
+    /* Batch Header Styling */
+    .batch-header {
+      background-color: #3f4d5c; /* Dark gray */
+      color: var(--black); /* White text */
+      font-weight: bold;
+      cursor: pointer;
+      .__batch-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 1em;
+        background-color: #EAEBE4;
+      }
+    }
+
+    /* Scrollable Batch Content */
+    .batch-content {
+      min-height: 256px; /* Fixed height */
+      max-height: 100vh; /* Fixed height */
+      overflow-y: auto; /* Scroll enabled */
+      display: block;
+      width: 100%;
+    }
+
+    /* Keep row structure inside scrollable area */
+    .batch-content tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    /* Scrollbar Customization */
+    .batch-content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .batch-content::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    .batch-content::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    /* Min/Max Highlights */
+    .maxtag {
+      border: 2px solid red;
+    }
+    .mintag {
+      border: 2px solid #a0c200;
+    }
+    .highlight-max {
+      color: red;
+      font-weight: bold;
+    }
+    .highlight-min {
+      color: #a0c200;
+      font-weight: bold;
+    }
+
+    /* Row Styling */
+    tbody tr:nth-child(odd) {
+      background-color: #f0f0f0; /* Light gray */
+    }
+    tbody tr:nth-child(even) {
+      background-color: #ffffff; /* White */
+    }
+
+    /* Clickable ID */
+    .id-cell {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Red Dots */
+    .dot {
+      color: red;
+      font-size: 16px;
+    }
   }
-  
+}
