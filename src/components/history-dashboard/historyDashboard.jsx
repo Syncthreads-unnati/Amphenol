@@ -10,7 +10,6 @@ const HistoryDashboard = () => {
       {/* Stats Section */}
       <div className="stats-container">
       <button className="export-btn back-btn">
-          {/* <img src={bx_export} alt="Export" /> */}
           BACK
         </button>
       <button className="export-btn">
@@ -35,24 +34,6 @@ const HistoryDashboard = () => {
         </div>
         
       </div>
-
-      {/* Defect Summary */}
-      {/* <div className="defect-summary">
-        <div className="defect-box max-defect">
-        <div className="defect-content">
-          <span className="label">Max Defect:</span>
-          <span className="defect-name">Deep Gate </span>
-        </div>
-        <span className="count">140</span>
-        </div>
-        <div className="defect-box min-defect">
-          <div className="defect-content">
-            <span className="label">Min Defect:</span>
-            <span className="defect-name">Contact Plating Peel off (Pocket)</span>
-          </div>
-          <span className="count">140</span>
-        </div>
-      </div> */}
     </div>
   );
 };

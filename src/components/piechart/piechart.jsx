@@ -1,48 +1,14 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, Text } from "recharts";
+import { pieChartData } from "../../constants/constants";
+import { backgroundColor } from "../../constants/constants";
 import "./piechart.scss";
-const data = [
-  { name: "1", value: 50 },
-  { name: "2", value: 50 },
-  { name: "3", value: 20 },
-  { name: "4", value: 120 },
-  { name: "5", value: 60 },
-  { name: "6", value: 40 },
-  { name: "7", value: 140 },
-  { name: "8", value: 60 },
-  { name: "9", value: 45 },
-  { name: "10", value: 45 },
-  { name: "11", value: 84 },
-  { name: "12", value: 56 },
-  { name: "13", value: 30 },
-];
 
-// Custom background colors
-const backgroundColor = [
-  "#FFA322",
-  "#7E7E7E",
-  "#4085FF",
-  "#FFEC61",
-  "#F1589B",
-  "#4EC8B0",
-  "#96C923",
-  "#DC3CA9",
-  "#49C2FF",
-  "#7341D5", 
-  "#0CA70C",
-  "#E74649",
-  "#D89447",
-];
-
-const PieChartComponent = () => {
-  const percentage = (value) => {
-    return (value / 1400) * 100;
-  };
-
+const PieChartComponent = ({ width, height, outerRadius, fontSize }) => {
   return (
-    <PieChart width={600} height={600} className="pie-chart-container">
+    <PieChart width={width} height={height}>
       <Pie
-        data={data}
+        data={pieChartData}
         cx="50%"
         cy="50%"
         labelLine={false}
@@ -59,20 +25,20 @@ const PieChartComponent = () => {
             {name}
           </text>
         )}
-        outerRadius={260}
+        outerRadius={outerRadius}
         fill="#8884d8"
         dataKey="value"
       >
-        {data.map((entry, index) => (
+        {pieChartData.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={backgroundColor[index]} />
         ))}
       </Pie>
 
       <Pie
-        data={data}
+        data={pieChartData}
         cx="50%"
         cy="50%"
-        outerRadius={260}
+        outerRadius={outerRadius}
         fill="#8884d8"
         dataKey="value"
         label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
@@ -91,7 +57,7 @@ const PieChartComponent = () => {
               fill="black"
               textAnchor="middle"
               dominantBaseline="central"
-              fontSize={"1.2rem"}
+              fontSize={fontSize}
               fontWeight="bold"
             >
               {`${percentage}%`}
@@ -100,7 +66,7 @@ const PieChartComponent = () => {
         }}
         labelLine={false}
       >
-        {data.map((entry, index) => (
+        {pieChartData.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={backgroundColor[index]} />
         ))}
       </Pie>

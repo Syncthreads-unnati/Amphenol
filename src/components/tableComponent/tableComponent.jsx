@@ -117,21 +117,15 @@ const TableComponent = () => {
               {expandedBatches[batchNumber] && (
                 <tr>
                   <td colSpan={tableData?.headers?.length}>
-                    <div className="batch-content">
+                    <div className={`batch-content ${expandedBatches[batchNumber] ? "expanded" : "collapsed"}`}>
                       {rows.map((row) => (
                         <tr key={row.id}>
                           <td>{batchNumber}</td>
-                          <td
-                            className="id-cell"
-                            onClick={() => setPopupOpen(!isPopupOpen)}
-                            style={{ cursor: "pointer" }}
-                          >
+                          <td className="id-cell" onClick={() => setPopupOpen(!isPopupOpen)} style={{ cursor: "pointer" }}>
                             {row.id}
                           </td>
                           {row.values.map((value, cellIndex) => (
-                            <td key={cellIndex} className="dot">
-                              {value || "●"}
-                            </td>
+                            <td key={cellIndex} className="dot">{value || "●"}</td>
                           ))}
                         </tr>
                       ))}

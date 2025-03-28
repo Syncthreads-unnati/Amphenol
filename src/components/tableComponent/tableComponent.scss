@@ -38,6 +38,7 @@
       background-color: #3f4d5c; /* Dark gray */
       color: var(--black); /* White text */
       font-weight: bold;
+      padding: 1em;
       cursor: pointer;
       .__batch-container {
         display: flex;
@@ -48,33 +49,49 @@
       }
     }
 
-    /* Scrollable Batch Content */
-    .batch-content {
-      min-height: 256px; /* Fixed height */
-      max-height: 100vh; /* Fixed height */
-      overflow-y: auto; /* Scroll enabled */
-      display: block;
-      width: 100%;
-    }
 
-    /* Keep row structure inside scrollable area */
-    .batch-content tr {
-      display: table;
-      width: 100%;
-      table-layout: fixed;
-    }
+/* Batch Content: Minimum 256px, expands when needed */
+.batch-content {
+  min-height: 256px;
+  max-height: 256px; /* Default height when expanded */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: max-height 0.3s ease-in-out;
+}
 
-    /* Scrollbar Customization */
-    .batch-content::-webkit-scrollbar {
-      width: 6px;
-    }
-    .batch-content::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 4px;
-    }
-    .batch-content::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+/* Adjust batch height dynamically */
+.batch-content.expanded {
+  flex-grow: 1; /* Allows expansion */
+  max-height: unset; /* Removes fixed max-height */
+}
+
+/* Collapsed batch stays at min height */
+.batch-content.collapsed {
+  min-height: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Keep row structure inside batch-content */
+.batch-content tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Custom Scrollbar */
+.batch-content::-webkit-scrollbar {
+  width: 6px;
+}
+.batch-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.batch-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
 
     /* Min/Max Highlights */
     .maxtag {
