@@ -25,27 +25,46 @@ const DefectTable = () => {
     <table className="defect-table">
       <tbody>
         {defectData.map((item, index) => (
-          <tr
-            key={index}
-            className={
-              item.value === minValue
-                ? "min"
-                : item.value === maxValue
-                ? "max"
-                : ""
-            }
-          >
-            <td>
-              <div className="defect-row">
-                <span
+          <>
+          <div
+                className={
+                  item.value === minValue
+                    ? "minvalue"
+                    : item.value === maxValue
+                    ? "maxvalue"
+                    : ""
+                }
+              >
+                {item.value === minValue
+                  ? "min"
+                  : item.value === maxValue
+                  ? "max"
+                  : ""}
+              </div>
+            <tr
+              key={index}
+              className={
+                item.value === minValue
+                  ? "min"
+                  : item.value === maxValue
+                  ? "max"
+                  : ""
+              }
+            >
+              
+              <td>
+                {" "}
+                <span>{index + 1}</span>
+              </td>
+              <td>
+                <div className="defect-row"><span
                   className="dot"
                   style={{ backgroundColor: item.color }}
-                ></span>
-                {item.label}
-              </div>
-            </td>
-            <td>{item.value}</td>
-          </tr>
+                ></span>{item.label}</div>
+              </td>
+              <td>{item.value}</td>
+            </tr>
+          </>
         ))}
       </tbody>
     </table>

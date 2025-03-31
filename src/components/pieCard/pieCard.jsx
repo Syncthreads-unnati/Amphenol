@@ -2,9 +2,10 @@ import React from "react";
 import "./pieCard.scss";
 import PieChartComponent from "../piechart/piechart";
 
-const PieCard = () => {
+const PieCard = ({key,lot,PieCardData,handleViewClick}) => {
+
   return (
-    <div className="chart-container">
+    <div key={key} className="chart-container">
       <div className="header">LOT 1 PIE CHART</div>
       <PieChartComponent width={250} height={250} outerRadius={80} fontSize={"0.7em"}/>
 
@@ -25,7 +26,7 @@ const PieCard = () => {
         </div>
       </div>
 
-      <button className="view-btn">View</button>
+      <button className="view-btn" onClick={handleViewClick} >View</button>
     </div>
   );
 };

@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className="navbar">
       <nav className="nav-icon">
         <div className="icon-container">
-          <img src={company_logo} alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
         <nav className="nav-left">
           <button
@@ -53,9 +53,6 @@ const Navbar = () => {
         </nav>
       </nav>
       <nav className="nav-right">
-        <div className="icon-container">
-          <img src={logo} alt="logo" />
-        </div>
         <div className="user-badge">NV</div>
         <div className="battery-icon">
           <img src={battery} alt="battery" />

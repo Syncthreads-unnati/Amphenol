@@ -127,7 +127,7 @@ export const batchData = [
     details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
   },
 ];
-
+// Pie chart data
 export const pieChartData = [
   { name: "1", value: 50 },
   { name: "2", value: 50 },
@@ -292,4 +292,100 @@ export const pieCardData = [
     },
   ];
   
-  
+  //bar graph data 
+  export const graphlabels = [
+    "Contact Damage",
+    "Contact Direction Change",
+    "Contact Plating Peel Off (Pocket)",
+    "Contact Plating Peel Off (Head)",
+    "DE-Flashing",
+    "DAP Powder",
+    "Deep Gate",
+    "Foreign Material",
+    "Metal Chip Off Molded",
+    "Short Contact",
+    "Short Mold",
+    "Vertical Flash",
+    "Machine Tool Mark Pocket",
+  ];
+
+  export const graphvalues = [50, 50, 20, 120, 60, 40, 140, 60, 45, 45, 84, 55, 30];
+
+  export const graphbackgroundColors = [
+    "#FFA500", "#808080", "#4085FF", "#FFEC61", "#FF1493", "#4EC8B0",
+    "#96C923", "#DC3CA9", "#49C2FF", "#7341D5", "#0CA70C", "#E74649", "#D89447"
+  ];
+
+  export const multiplegraphvalues = [
+    
+      {
+        "graphId": "Lot 1 Graph",
+        "data": [
+          { "label": "Category A", "value": 45 },
+          { "label": "Category B", "value": 30 },
+          { "label": "Category C", "value": 55 },
+          { "label": "Category D", "value": 20 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+          { "label": "Category E", "value": 40 },
+        ]
+      },
+      {
+        "graphId": "Lot 2 Graph",
+        "data": [
+          { "label": "Category A", "value": 50 },
+          { "label": "Category A", "value": 50 },
+          { "label": "Category B", "value": 35 },
+          { "label": "Category B", "value": 35 },
+          { "label": "Category C", "value": 60 },
+          { "label": "Category C", "value": 60 },
+          { "label": "Category D", "value": 25 },
+          { "label": "Category D", "value": 25 },
+          { "label": "Category D", "value": 125 },
+          { "label": "Category D", "value": 25 },
+          { "label": "Category D", "value": 25 },
+          { "label": "Category E", "value": 45 },
+          { "label": "Category E", "value": 45 }
+        ]
+      },
+      {
+        "graphId": "Lot 3 Graph",
+        "data": [
+          { "label": "Category A", "value": 55 },
+          { "label": "Category A", "value": 45 },
+          { "label": "Category A", "value": 115 },
+          { "label": "Category B", "value": 40 },
+          { "label": "Category A", "value": 55 },
+          { "label": "Category D", "value": 30 },
+          { "label": "Category C", "value": 65 },
+          { "label": "Category B", "value": 40 },
+          { "label": "Category D", "value": 130 },
+          { "label": "Category E", "value": 50 },
+          { "label": "Category E", "value": 50 },
+          { "label": "Category E", "value": 50 },
+          { "label": "Category E", "value": 50 }
+        ]
+      }
+  ];
+
+  export const cardData = [
+    {
+      id: 1,
+      type: "Max",
+      value: "0140",
+      total: "1400",
+      color: "red",
+    },
+    {
+      id: 2,
+      type: "Min",
+      value: "0020",
+      total: "1400",
+      color: "green",
+    },
+  ];

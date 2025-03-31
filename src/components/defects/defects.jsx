@@ -4,7 +4,7 @@ import PieChart from "../piechart/piechart";
 import "./defects.scss";
 import ToggleButton from "../toggleButton/toggleButton";
 import DefectsChart from "../defects-barchart/defectsChart";
-import { toggleData } from "../../constants/constants";
+import { graphbackgroundColors, graphlabels, graphvalues, toggleData } from "../../constants/constants";
 const Defects = () => {
   const [activeTab, setActiveTab] = useState("pie chart");
   return (
@@ -18,14 +18,14 @@ const Defects = () => {
         {activeTab == "pie chart" ? (
           <>
             <div className="defects-chart">
-              <PieChart width={540} height={540} outerRadius={260} fontSize={"1.2em"}/>
+              <PieChart width={600} height={600} outerRadius={260} fontSize={"1.2em"}/>
             </div>
             <div className="defects-table">
               <DefectTable />
             </div>
           </>
         ) : (
-          <DefectsChart />
+          <DefectsChart labels={graphlabels} values={graphvalues} graphbackgroundColor={graphbackgroundColors}/>
         )}
       </div>
     </div>

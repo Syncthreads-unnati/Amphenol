@@ -6,10 +6,12 @@ import { lotData } from "../../constants/constants";
 import PieCard from "../pieCard/pieCard";
 import { pieCardData } from "../../constants/constants";
 import "./piechartSummaryComponent.scss";
+import PieChartpopup from "../pieChartpopup/pieChartpopup";
 
 const PieChartSummaryComponent = () => {
   const itemsPerPage = 3; // Set number of lots per page
   const [currentPage, setCurrentPage] = useState(1);
+  const [view, setView] = useState(false);
   // Calculate total pages
   const totalPages = Math.ceil(lotData.length / itemsPerPage);
 
@@ -30,15 +32,23 @@ const PieChartSummaryComponent = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
+  const handleViewClick = () => {
+    setView(true);
+  };
+
   return (
     <>
-    <div className="pie-chart-summary-container">
-      {
-        currentLots.map((lot) => (
-          <PieCard key={lot.id} lot={lot} pieCardData={pieCardData} />
-        ))
-      }
-    </div>
+      <div className="pie-chart-summary-container">
+        {currentLots.map((lot) => (
+          <PieCard
+            key={lot.id}
+            lot={lot}
+            pieCardData={pieCardData}
+            handleViewClick={handleViewClick}
+          />
+        ))}
+      </div>
       {/* Pagination Controls */}
       <div className="pagination-controls">
         <button onClick={goToPrevPage} disabled={currentPage === 1}>
@@ -51,7 +61,9 @@ const PieChartSummaryComponent = () => {
           <img src={greyrightarrow} alt="rightarrow" />
         </button>
       </div>
-      </>
+      {view && <PieChartpopup onOpen={view} onClose={() => setView(false)} />}
+      {/* <PieChartpopup onOpen={view} onClose={()=>setView(false)}/> */}
+    </>
   );
 };
 export default PieChartSummaryComponent;

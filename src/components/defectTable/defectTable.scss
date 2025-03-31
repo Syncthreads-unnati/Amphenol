@@ -33,12 +33,20 @@
     .min {
       border: 2px solid green;
       font-weight: bold;
-      color: green;
+      // color: green;
     }
   
     .max {
       border: 2px solid red;
       font-weight: bold;
+      // color: red;
+    }
+    .maxvalue{
+      font-weight: bold;
       color: red;
+    }
+    .minvalue{
+      font-weight: bold;
+      color: green;
     }
   }
