@@ -3,18 +3,42 @@
     border-collapse: collapse;
     font-family: Arial, sans-serif;
   
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
+    // th, td {
+    //   padding: 10px;
+    //   text-align: left;
+    // }
   
     tbody {
-      tr {
-        border-bottom: 1px solid #ddd;
-  
+      border-collapse: collapse; // Removes double borders
+      tr,td {
+        border: 5px solid #FFFFFF;
+        padding: 10px;
+        //   text-align: left;
         &:last-child {
           border-bottom: none;
         }
+      }
+      // td{
+      //   border-right: 5px solid #FFFFFF;
+      // }
+      .min {
+        border: 2px solid green;
+        font-weight: bold;
+        // color: green;
+      }
+    
+      .max {
+        border: 2px solid red;
+        font-weight: bold;
+        // color: red;
+      }
+      .maxvalue{
+        font-weight: bold;
+        color: red;
+      }
+      .minvalue{
+        font-weight: bold;
+        color: green;
       }
     }
   
@@ -30,23 +54,5 @@
       border-radius: 50%;
     }
   
-    .min {
-      border: 2px solid green;
-      font-weight: bold;
-      // color: green;
-    }
-  
-    .max {
-      border: 2px solid red;
-      font-weight: bold;
-      // color: red;
-    }
-    .maxvalue{
-      font-weight: bold;
-      color: red;
-    }
-    .minvalue{
-      font-weight: bold;
-      color: green;
-    }
+
   }

@@ -1,7 +1,7 @@
 .dashboard-container {
     padding: 20px;
-    font-family: Arial, sans-serif;
-  
+    // font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
     .header {
       display: flex;
       justify-content: space-between;
@@ -70,11 +70,24 @@
         border-collapse: collapse;
         border: 1px solid #ddd;
         background: white;
-  
+        tbody{
+          background-color: #DDDEDF40;
+          color: #474545;
+          tr,td{
+            border: 5px solid white;
+          }
+
+        }
+        thead{
+          color: #474545;
+          border: 5px solid white;
+        }
         th, td {
           padding: 10px;
           text-align: left;
           border-bottom: 1px solid #ddd;
+          border: 5px solid white;  
+          color: #474545;
         }
   
         th {

@@ -38,7 +38,6 @@
         background-size: 14px;
         width: 200px;
       }
-      
 
       /* Hide default browser icons */
       input[type="date"]::-webkit-calendar-picker-indicator,
@@ -83,6 +82,8 @@
       font-weight: 500;
       cursor: pointer;
       position: relative;
+      text-transform: capitalize;
+      letter-spacing: 0.1em;
     }
     
     /* Hide Default Checkbox */
@@ -96,11 +97,13 @@
     .checkmark {
       width: 18px;
       height: 18px;
+      position: relative;
       border: 2px solid #007bff;
       background-color: white;
       display: inline-block;
       border-radius: 4px;
-      position: relative;
+      text-transform: capitalize;
+      letter-spacing: 0.1em;
     }
     
     /* Checkmark when checked */
@@ -121,7 +124,10 @@
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
-  
+    .__button-div{
+      display: flex;
+      gap: 2em;
+    }
     .apply-btn {
       background: #007bff;
       color: white;
@@ -131,9 +137,25 @@
       cursor: pointer;
       font-size: 14px;
       transition: 0.3s ease;
-  
+      text-transform: capitalize;
+      letter-spacing: 0.1em;
       &:hover {
         background: #0056b3;
+      }
+    }
+    .clear-btn{
+      background: #555555;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+      text-transform: capitalize;
+      letter-spacing: 0.1em;
+      &:hover {
+        background: #555555;
       }
     }
   }

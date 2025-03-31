@@ -25,25 +25,25 @@ const DefectTable = () => {
     <table className="defect-table">
       <tbody>
         {defectData.map((item, index) => (
-          <>
-          <div
-                className={
-                  item.value === minValue
-                    ? "minvalue"
-                    : item.value === maxValue
-                    ? "maxvalue"
-                    : ""
-                }
-              >
-                {item.value === minValue
-                  ? "min"
+          <div style={{display:"flex",width:"100%"}}>
+            <span
+              className={
+                item.value === minValue
+                  ? "minvalue"
                   : item.value === maxValue
-                  ? "max"
-                  : ""}
-              </div>
+                  ? "maxvalue"
+                  : ""
+              }
+            >
+              {item.value === minValue
+                ? "min"
+                : item.value === maxValue
+                ? "max"
+                : ""}
+            </span>
             <tr
               key={index}
-              className={
+              id={
                 item.value === minValue
                   ? "min"
                   : item.value === maxValue
@@ -51,20 +51,22 @@ const DefectTable = () => {
                   : ""
               }
             >
-              
               <td>
                 {" "}
                 <span>{index + 1}</span>
               </td>
               <td>
-                <div className="defect-row"><span
-                  className="dot"
-                  style={{ backgroundColor: item.color }}
-                ></span>{item.label}</div>
+                <div className="defect-row">
+                  <span
+                    className="dot"
+                    style={{ backgroundColor: item.color }}
+                  ></span>
+                  {item.label}
+                </div>
               </td>
               <td>{item.value}</td>
             </tr>
-          </>
+          </div>
         ))}
       </tbody>
     </table>

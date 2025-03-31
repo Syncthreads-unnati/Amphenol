@@ -18,7 +18,7 @@ const Defects = () => {
         {activeTab == "pie chart" ? (
           <>
             <div className="defects-chart">
-              <PieChart width={600} height={600} outerRadius={260} fontSize={"1.2em"}/>
+              <PieChart width={560} height={560} outerRadius={240} fontSize={"1.2em"}/>
             </div>
             <div className="defects-table">
               <DefectTable />

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./component-dashboard.scss"
 const DefectTable = ({ defects }) => {
   return (
     <table className="defect-table">

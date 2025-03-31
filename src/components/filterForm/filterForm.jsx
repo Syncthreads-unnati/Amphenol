@@ -130,10 +130,14 @@ const FilterForm = () => {
           NON DEFECTIVE
         </label>
       </div>
-
-      <button type="submit" className="apply-btn">
-        Apply Filters
-      </button>
+      <div className="__button-div">
+        <button type="submit" className="apply-btn">
+          Apply Filters
+        </button>
+        <button type="submit" className="clear-btn">
+          clear Filters
+        </button>
+      </div>
     </form>
   );
 };
