@@ -1,0 +1,139 @@
+.sub-tab-buttons {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 2px solid #ddd;
+  
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      background: #eee;
+      font-weight: bold;
+  
+      &.active {
+        background-color: #91a33a;
+        color: white;
+      }
+    }
+  }
+
+.user-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+  
+      th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f4f4f4;
+      }
+  
+      .biometric-icon {
+        color: #91a33a;
+        font-size: 18px;
+      }
+  
+      .actions {
+        display: flex;
+        gap: 10px;
+  
+        .edit {
+          color: blue;
+          cursor: pointer;
+        }
+  
+        .view {
+          color: black;
+          cursor: pointer;
+        }
+  
+        .delete {
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  .create-user {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+  
+    h3 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+  
+      input, select {
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        margin-top: 15px;
+        padding: 10px;
+        border: none;
+        background-color: #91a33a;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+  
+        &:hover {
+          background-color: #7a8b29;
+        }
+      }
+    }
+  }
+  
+  .back-btn {
+    display: block;
+    width: 100px;
+    margin: 10px auto 0;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #555;
+    }
+  }

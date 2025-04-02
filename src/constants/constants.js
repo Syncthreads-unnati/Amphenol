@@ -406,3 +406,11 @@ export const pieCardData = [
       color: "green",
     },
   ];
+
+  export const users = [
+    { id: 1, name: "Naveen Sharma", type: "Admin", password: "**************" },
+    { id: 2, name: "Niraj Shah", type: "Operator", password: "**************" },
+    { id: 3, name: "Vijay Verma", type: "Operator", password: "**************" },
+    { id: 4, name: "Abhijeet Patil", type: "Operator", password: "**************" },
+    { id: 5, name: "Sunil Gavde", type: "Operator", password: "**************" },
+  ];

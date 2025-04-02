@@ -1,0 +1,142 @@
+.user-control-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .tab-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  
+    button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #fff;
+      color: #333;
+      transition: 0.3s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+      .icon {
+        color: #91a33a;
+      }
+  
+      &:hover,
+      &.active {
+        background-color: #e8edda;
+      }
+    }
+  }
+  
+  .user-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+  
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+      }
+  
+      .buttons {
+        display: flex;
+        gap: 10px;
+  
+        .list-btn,
+        .create-btn {
+          padding: 8px 15px;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 14px;
+        }
+  
+        .list-btn {
+          background: #e8edda;
+        }
+  
+        .create-btn {
+          background: #91a33a;
+          color: white;
+        }
+      }
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+  
+      th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f4f4f4;
+      }
+  
+      .biometric-icon {
+        color: #91a33a;
+        font-size: 18px;
+      }
+  
+      .actions {
+        display: flex;
+        gap: 10px;
+        
+        .edit {
+          color: blue;
+          cursor: pointer;
+        }
+  
+        .view {
+          color: black;
+          cursor: pointer;
+        }
+  
+        .delete {
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .back-btn {
+      display: block;
+      width: 100px;
+      margin: 10px auto 0;
+      padding: 10px;
+      border: none;
+      background-color: #333;
+      color: white;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #555;
+      }
+    }
+  }
+  

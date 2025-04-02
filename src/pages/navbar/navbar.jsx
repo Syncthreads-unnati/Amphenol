@@ -3,7 +3,7 @@ import history from "../../assets/image/history.png";
 import setting from "../../assets/image/setting.png";
 import logo from "../../assets/image/logo.png";
 import battery from "../../assets/image/battery.png";
-import company_logo from "../../assets/image/company_logo.png";
+
 import "./navbar.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router";
