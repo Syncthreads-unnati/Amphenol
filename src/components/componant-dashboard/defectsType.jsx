@@ -14,7 +14,7 @@ const DefectTable = ({ defects }) => {
         {defects.map((defect, index) => (
           <tr key={index}>
             <td>{defect.name}</td>
-            <td className="status-icon">{defect.status ? "🔴" : ""}</td>
+            <td className={defect.status ? "dot" : ""}></td>
             <td><strong>{defect.probability}%</strong></td>
           </tr>
         ))}

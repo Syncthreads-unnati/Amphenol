@@ -125,7 +125,7 @@ const TableComponent = () => {
                             {row.id}
                           </td>
                           {row.values.map((value, cellIndex) => (
-                            <td key={cellIndex} className="dot">{value || "●"}</td>
+                            <td key={cellIndex} className="dot">{value || ""}</td>
                           ))}
                         </tr>
                       ))}

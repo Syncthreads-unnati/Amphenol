@@ -25,6 +25,8 @@ export const images = [
     { src: image12, overlayText: "AI: 95%" },
   ]
 
+export const connectorType = ["106535-00","106535-01","106535-02",];
+
  export const defects = [
     { name: "Contact Damage", status: true, probability: 95 },
     { name: "Contact Direction Change", status: false, probability: 0 },
@@ -111,18 +113,33 @@ export const batchData = [
   {
     code: "Batch 1",
     count: 1400,
+    connectorType: "106535-01",
+    startDate: "18-03-2025",
+    endDate: "18-03-2025",
+    startTime: "9:00 am",
+    endTime: "1:00 pm",
     data: [50, 20, 120, 140, 60, 40, 45, 45, 45, 84, 36, 56,56],
     details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
   },
   {
     code: "Batch 2",
     count: 1400,
+    connectorType: "106535-01",
+    startDate: "18-03-2025",
+    endDate: "18-03-2025",
+    startTime: "9:00 am",
+    endTime: "1:00 pm",
     data: [50,20, 120, 160, 60, 40, 45, 45, 45, 84, 36, 56, 56],
     details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
   },
   {
     code: "Batch 3",
     count: 1400,
+    connectorType: "106535-01",
+    startDate: "18-03-2025",
+    endDate: "18-03-2025",
+    startTime: "9:00 am",
+    endTime: "1:00 pm",
     data: [50, 80, 90,  116, 60, 40, 70, 45, 45, 84, 36, 56,56],
     details: ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"],
   },

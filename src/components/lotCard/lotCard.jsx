@@ -5,7 +5,7 @@ import "./LoatCard.scss";
 const LotCard = ({ lot }) => {
   return (
     <div className="lot-card">
-      <h3 className="lot-title">LOT {lot.id}</h3>
+      <h3 className="lot-title">Batch {lot.id}</h3>
 
       {/* Count Summary */}
       <div className="count-summary">

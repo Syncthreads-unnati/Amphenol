@@ -1,12 +1,14 @@
 import React from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend, Text } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { pieChartData } from "../../constants/constants";
 import { backgroundColor } from "../../constants/constants";
 import "./piechart.scss";
 
-const PieChartComponent = ({ width, height, outerRadius, fontSize }) => {
+const PieChartComponent = ({fontSize }) => {
   return (
-    <PieChart width={width} height={height}>
+    <div className="pie-chart-container">
+    <ResponsiveContainer width="100%" height="100%">
+    <PieChart>
       <Pie
         data={pieChartData}
         cx="50%"
@@ -25,7 +27,7 @@ const PieChartComponent = ({ width, height, outerRadius, fontSize }) => {
             {name}
           </text>
         )}
-        outerRadius={outerRadius}
+        outerRadius="90%"
         fill="#8884d8"
         dataKey="value"
       >
@@ -38,7 +40,7 @@ const PieChartComponent = ({ width, height, outerRadius, fontSize }) => {
         data={pieChartData}
         cx="50%"
         cy="50%"
-        outerRadius={outerRadius}
+        outerRadius="90%"
         fill="#8884d8"
         dataKey="value"
         label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
@@ -73,6 +75,8 @@ const PieChartComponent = ({ width, height, outerRadius, fontSize }) => {
 
       <Tooltip />
     </PieChart>
+    </ResponsiveContainer>
+    </div>
   );
 };
 

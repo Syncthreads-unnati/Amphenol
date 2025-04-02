@@ -27,8 +27,8 @@
       .select-component {
         width: 35%;
       }
-      .stop-button {
-        background: red;
+
+      .custom-button {
         color: white;
         padding: 0.5rem 2.3rem;
         border: none;
@@ -36,10 +36,17 @@
         cursor: pointer;
         font-size: 1rem;
         font-weight: bold;
-        
-        &:hover {
-          background: darkred;
-        }
+        text-transform: uppercase;
+        letter-spacing: 0.021em;
+        // &:hover {
+        //   background: darkred;
+        // }
+      }
+      .start-button{
+        background: #007BFF;
+      }
+      .stop-button{
+        background: red;
       }
     }
   

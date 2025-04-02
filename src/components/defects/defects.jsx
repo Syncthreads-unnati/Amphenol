@@ -9,18 +9,19 @@ const Defects = () => {
   const [activeTab, setActiveTab] = useState("pie chart");
   return (
     <div className="defects-chartOptions">
+    <>
       <ToggleButton
         toggledata={toggleData}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-      />
+        />
       <div className="defects-container">
         {activeTab == "pie chart" ? (
           <>
             <div className="defects-chart">
               <PieChart width={560} height={560} outerRadius={240} fontSize={"1.2em"}/>
             </div>
-            <div className="defects-table">
+            <div className="defects-table-div">
               <DefectTable />
             </div>
           </>
@@ -28,6 +29,7 @@ const Defects = () => {
           <DefectsChart labels={graphlabels} values={graphvalues} graphbackgroundColor={graphbackgroundColors}/>
         )}
       </div>
+        </>
     </div>
   );
 };

@@ -26,24 +26,25 @@ const History = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
-      {activeTab === "list" && (
-        <TableComponent />
-      ) }
-      { activeTab === "pie chart" && (
+      {activeTab === "list" && <TableComponent />}
+      {activeTab === "pie chart" && (
         <>
-          <SummaryPieChart view={false} width={560} height={560}  outerRadius={240}/>
+          <SummaryPieChart
+            view={false}
+            width={560}
+            height={560}
+            outerRadius={240}
+          />
           <PieChartSummaryComponent />
         </>
-      )} 
-      { activeTab === "graph" && (
+      )}
+      {activeTab === "graph" && (
         <>
           <SummarygraphChart />
           <BargraphSummaryComponent />
         </>
-      ) }
-      { activeTab === "item" &&(
-      <ComponentDashboard popup={false}/>
       )}
+      {activeTab === "item" && <ComponentDashboard popup={false} />}
     </>
   );
 };

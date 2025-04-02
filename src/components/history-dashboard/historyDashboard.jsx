@@ -16,7 +16,7 @@ const HistoryDashboard = () => {
           EXPORT
         </button>
         <div className="stat-card">
-          <p>📦 LOT</p>
+          <p>📦 Batch</p>
           <h2>0</h2>
         </div>
         <div className="stat-card">

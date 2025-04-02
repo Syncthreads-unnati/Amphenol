@@ -1,4 +1,5 @@
 
+
 .defects-chartOptions{
     background: #FFFFFF;
     .chartOptions{
@@ -27,10 +28,16 @@
             padding: 1rem;
             margin-inline: auto;
         }
-        .defects-table{
+        .defects-table-div{
             width: 50%;
-            padding: 1rem;
+            // padding: 1rem;
             background-color: #FAFAFA;
         }
     }
+    
+.defects-container::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }

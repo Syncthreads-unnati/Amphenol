@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./filterForm.scss";
+import { connectorType } from "../../constants/constants";
 
 const FilterForm = () => {
   const [filters, setFilters] = useState({
@@ -48,9 +49,9 @@ const FilterForm = () => {
           value={filters.connectorType}
           onChange={handleChange}
         >
-          <option value="">Connector Type</option>
-          <option value="type1">Type 1</option>
-          <option value="type2">Type 2</option>
+          {connectorType.map((item)=>(
+            <option>{item}</option>
+          ))}
         </select>
       </div>
 

@@ -1,58 +1,48 @@
-.defect-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-  
-    // th, td {
-    //   padding: 10px;
-    //   text-align: left;
-    // }
-  
-    tbody {
-      border-collapse: collapse; // Removes double borders
-      tr,td {
-        border: 5px solid #FFFFFF;
-        padding: 10px;
-        //   text-align: left;
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-      // td{
-      //   border-right: 5px solid #FFFFFF;
-      // }
-      .min {
-        border: 2px solid green;
-        font-weight: bold;
-        // color: green;
-      }
+.defects-table-div {
+  // width: 100%;
+}
+.defects-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  th, td {
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    text-align: left;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  /* Minimum value row */
+  .min-row {
+    position: relative;
+    border: 2px solid #A6C54B; /* Green border */
+  }
+  /* Maximum value row */
+  .max-row {
+    position: relative;
+    border: 2px solid #FF0000; /* Red border */
+  }
+  /* Min & Max Labels */
+  .min-label, .max-label {
+    position: absolute;
+    left:-40px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+    letter-spacing: 0.01em;
+  }
+  .min-label {
+    color: #6D8F23;
     
-      .max {
-        border: 2px solid red;
-        font-weight: bold;
-        // color: red;
-      }
-      .maxvalue{
-        font-weight: bold;
-        color: red;
-      }
-      .minvalue{
-        font-weight: bold;
-        color: green;
-      }
-    }
-  
-    .defect-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-  
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-  
+  }
+  .max-label {
+    color: #FF0000;
 
   }
+}

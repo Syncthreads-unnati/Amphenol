@@ -42,13 +42,9 @@ const SummaryPieChart = ({ view, onClose, width, height, outerRadius }) => {
 
         <div className="defects-container">
           <div className="defects-chart">
-            <PieChartComponent
-              width={width}
-              height={height}
-              outerRadius={outerRadius}
-            />
+            <PieChartComponent />
           </div>
-          <div className="defects-table">
+          <div className="defects-table-div">
             <DefectTable />
           </div>
         </div>
