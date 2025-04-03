@@ -41,13 +41,15 @@
         width: 50%;
         display: grid;
         grid-template-columns: repeat(auto-fit, 154px);
-        column-gap: 16px;
-        row-gap: 0;
+        grid-template-rows: repeat(auto-fit, 166px);
+        column-gap: 1.5em;
+        row-gap: 2.5em;
         .image-item {
           border: 1px solid black;
           // border-radius: 5px;
-          width: 150px;
-          height: 162.87px;
+          width: 10em;
+          height: 10.5em;
+          // height: 162.87px;
   
           img {
             width: 100%;
@@ -76,24 +78,30 @@
           color: #474545;
           tr,td{
             border: 3px solid white;
+            font-size: 1em;
           }
 
         }
         thead{
           color: #474545;
           border: 5px solid white;
+          tr,th{
+            padding: 0.5em;
+            font-size: 1.1em;
+          }
         }
         th, td {
-          padding: 10px;
+          padding-inline: 1em;
           text-align: left;
           border-bottom: 1px solid #ddd;
           border: 5px solid white;  
           color: #474545;
+          font-size: 1.3em;
         }
         td:nth-child(2) {
           border:none;
           width: 5px;
-          margin: 20px;
+          margin: 1.5em;
           display: flex;
           align-items: center; /* Vertically center the content */
           gap: 10px; /* Adds space between dot and text */
