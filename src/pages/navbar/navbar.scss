@@ -1,35 +1,33 @@
-
 @import "../../styles/mixins.scss";
 
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0b2643; // Greenish background
+  padding: 10px;
+  // width: 1080px;
+  height: 70px;
+  padding-inline: 34px;
+  .nav-icon {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #0B2643; // Greenish background
-    padding: 10px;
-    // width: 1080px;
-    height: 70px;
-    padding-inline: 34px;
-    .nav-icon{
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      .icon-container {
-        // background: white;
-        padding: 5px;
-        border-radius: 5px;
-      }
-    
+    gap: 30px;
+    .icon-container {
+      padding: 5px;
+      border-radius: 5px;
+    }
+
     .nav-left {
       display: flex;
       gap: 10px;
-      background-color: #7A7A7A;
-      margin-block: 20px; 
-    span{
+      background-color: #7a7a7a;
+      margin-block: 20px;
+      span {
         font-family: "Roboto", sans-serif;
       }
       .click-btn {
-        background:#8DA811;
+        background: #8da811;
         color: white;
         padding: 8px 15px;
         border-radius: 10px;
@@ -41,7 +39,7 @@
         border: none;
         cursor: pointer;
       }
-  
+
       .nav-item {
         display: flex;
         align-items: center;
@@ -54,44 +52,41 @@
         cursor: pointer;
         font-size: 16px;
       }
+    }
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
-      
+    .icon-container {
+      background: white;
+      padding: 5px;
+      border-radius: 5px;
     }
-  }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-     
-      .icon-container {
-        background: white;
-        padding: 5px;
-        border-radius: 5px;
-      }
-  
-      .user-badge {
-        background: navy;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 50%;
-        border: 2px solid white;
-      }
-  
-      .battery-icon {
-        // background: white;
-        padding: 5px;
-        border-radius: 5px;
-      }
-  
-      .time {
-        color: white;
-        text-align: right;
-        font-size: 14px;
-        font-weight: lighter;
-        span {
-          display: block;
-        }
+
+    .user-badge {
+      background: navy;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .battery-icon {
+      // background: white;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .time {
+      color: white;
+      text-align: right;
+      font-size: 14px;
+      font-weight: lighter;
+      span {
+        display: block;
       }
     }
   }
-  
+}

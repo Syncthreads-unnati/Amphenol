@@ -1,38 +1,45 @@
 import {
   FaUserCog,
-  FaDesktop,
   FaUserEdit,
   FaEye,
   FaTrashAlt,
 } from "react-icons/fa";
+import { useState } from "react";
 import { users } from "../../constants/constants";
-import "./usercontrolTable.scss"
+import list from "../../assets/image/list.png";
+import "./usercontrolTable.scss";
+import UserCreate from "./userCreate";
 
-const UserControlTable = ({ selectedTab,setSelectedTab }) => {
+const UserControlTable = () => {
+  const [selectedTab, setSelectedTab] = useState("List");
+
   return (
     <>
-      {selectedTab === "User Control" && (
-        <div className="user-list">
-          <div className="header">
-            <h2>
-              <FaUserCog className="icon" /> User Control
-            </h2>
-            {/* Sub Tabs - List and Create */}
-            <div className="sub-tab-buttons">
-              <button
-                className={selectedTab === "List" ? "active" : ""}
-                onClick={() => setSelectedTab("List")}
-              >
-                List
-              </button>
-              <button
-                className={selectedTab === "Create" ? "active" : ""}
-                onClick={() => setSelectedTab("Create")}
-              >
-                + Create
-              </button>
-            </div>
+      <div className="user-list">
+        <div className="header">
+          <h3>
+            <FaUserCog className="icon" /> User Control
+          </h3>
+          {/* Sub Tabs - List and Create */}
+          <div className="sub-tab-buttons">
+            <button
+              className={selectedTab === "List" ? "active" : ""}
+              onClick={() => setSelectedTab("List")}
+            >
+              <span>
+                <img src={list} alt="list" />
+              </span>{" "}
+              <span>List</span>
+            </button>
+            <button
+              className={selectedTab === "Create" ? "active" : ""}
+              onClick={() => setSelectedTab("Create")}
+            >
+              + Create
+            </button>
           </div>
+        </div>
+        {selectedTab === "List" && (
           <table>
             <thead>
               <tr>
@@ -63,9 +70,12 @@ const UserControlTable = ({ selectedTab,setSelectedTab }) => {
               ))}
             </tbody>
           </table>
-          <button className="back-btn">Back</button>
-        </div>
-      )}
+        )}
+        {selectedTab === "Create" && (
+          <UserCreate/>
+        )}
+      </div>
+      <button className="back-btn">Back</button>
     </>
   );
 };

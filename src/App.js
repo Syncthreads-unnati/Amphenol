@@ -1,12 +1,10 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./pages/navbar/navbar";
-import InputSection from "./components/inputSection/inputSection";
-import Defects from "./components/defects/defects";
-import ComponentDashboard from "./components/componant-dashboard/component-dashboard";
 import History from "./pages/history/history";
 import Dashboard from "./pages/dashboard/dashboard";
 import UserControl from "./pages/admin/adminDashboard";
+import UserControlTable from "./components/usercontrol/usercontrolTable";
 
 function ErrorPage() {
   React.useEffect(() => {
@@ -20,8 +18,7 @@ function ErrorPage() {
 const Layout = () => (
   <>
     <Navbar />
-    {/* <Outlet /> This renders the matching child route */}
-    <UserControl/>
+    <Outlet /> 
   </>
 );
 
@@ -34,11 +31,10 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-           <Dashboard/>
-        ),
+        element: <Dashboard/>,
       },
       { path: "/history", element: <History /> },
+      {path: "/usertable", element: <UserControlTable/>}
     ],
   },
 ]);
