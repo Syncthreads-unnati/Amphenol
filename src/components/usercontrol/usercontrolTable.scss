@@ -283,7 +283,7 @@
   }
   // submit button
   .btn-primary {
-    background-color: #1a56db;
+    width:30%;
     color: white;
     padding: 10px 4em;
     border: none;
@@ -291,8 +291,20 @@
     font-size: 14px;
     cursor: pointer;
     transition: 0.3s;
-
-    &:hover {
-      background-color: #1542a7;
+     &.biometric{
+      background-color: #1a56db;
+      &:hover {
+        background-color: #1542a7;
+      }
+    }
+    &.btn-submit{
+      background-color: #1a56db;
+      &:hover {
+        background-color: #1542a7;
+      }
+    }
+    &.create-user{
+      background-color: #7B8256;
     }
   }
+ 

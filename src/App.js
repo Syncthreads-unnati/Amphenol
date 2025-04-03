@@ -31,7 +31,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Dashboard/>,
+        element: <UserControl/>,
       },
       { path: "/history", element: <History /> },
       {path: "/usertable", element: <UserControlTable/>}

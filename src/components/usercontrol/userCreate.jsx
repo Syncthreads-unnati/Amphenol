@@ -125,7 +125,7 @@ const UserCreate = () => {
 
             {!biometricSubmitted && (
               <button
-                className="btn-primary"
+                className="btn-primary biometric"
                 onClick={() => setBiometric(true)}
               >
                 Add Biometric
@@ -134,7 +134,7 @@ const UserCreate = () => {
             {/* Create Button (only visible after biometric submission) */}
             {biometricSubmitted && (
               <button
-                className="btn-primary"
+                className="btn-primary create-user"
                 type="submit"
                 onClick={handleSubmit}
               >
@@ -156,7 +156,7 @@ const UserCreate = () => {
                 />
               ))}
             </div>
-            <button className="btn-primary" onClick={handleBiometricSubmit}>
+            <button className="btn-primary btn-submit" onClick={handleBiometricSubmit}>
               Submit
             </button>
           </div>
