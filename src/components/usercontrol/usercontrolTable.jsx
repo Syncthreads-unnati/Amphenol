@@ -1,17 +1,42 @@
-import {
-  FaUserCog,
-  FaUserEdit,
-  FaEye,
-  FaTrashAlt,
-} from "react-icons/fa";
+import { FaUserCog, FaUserEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import { useState } from "react";
-import { users } from "../../constants/constants";
+import { usersdata } from "../../constants/constants";
 import list from "../../assets/image/list.png";
 import "./usercontrolTable.scss";
 import UserCreate from "./userCreate";
 
 const UserControlTable = () => {
   const [selectedTab, setSelectedTab] = useState("List");
+  const [users, setUsers] = useState(usersdata);
+  const [editingUserId, setEditingUserId] = useState(null);
+  const [editedUser, setEditedUser] = useState({});
+
+  const handleEdit = (user) => {
+    setEditingUserId(user.id);
+    setEditedUser({ ...user });
+  };
+
+  const handleSave = () => {
+    setUsers((prevUsers) =>
+      prevUsers.map((u) =>
+        u.id === editingUserId ? { ...editedUser, showPassword: false } : u
+      )
+    );
+    setEditingUserId(null);
+    setEditedUser({});
+  };
+
+  const handleDelete = (userId) => {
+    setUsers((prevUsers) => prevUsers.filter((u) => u.id !== userId));
+  };
+
+  const togglePasswordVisibility = (userId) => {
+    setUsers((prevUsers) =>
+      prevUsers.map((u) =>
+        u.id === userId ? { ...u, showPassword: !u.showPassword } : u
+      )
+    );
+  };
 
   return (
     <>
@@ -55,25 +80,76 @@ const UserControlTable = () => {
               {users.map((user, index) => (
                 <tr key={user.id}>
                   <td>{index + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.type}</td>
-                  <td>{user.password}</td>
+                  <td>
+                    {editingUserId === user.id ? (
+                      <input
+                        value={editedUser.name}
+                        onChange={(e) =>
+                          setEditedUser({ ...editedUser, name: e.target.value })
+                        }
+                      />
+                    ) : (
+                      user.name
+                    )}
+                  </td>
+                  <td>
+                    {editingUserId === user.id ? (
+                      <input
+                        value={editedUser.type}
+                        onChange={(e) =>
+                          setEditedUser({ ...editedUser, type: e.target.value })
+                        }
+                      />
+                    ) : (
+                      user.type
+                    )}
+                  </td>
+                  <td>
+                    {editingUserId === user.id ? (
+                      <input
+                        value={editedUser.password}
+                        onChange={(e) =>
+                          setEditedUser({
+                            ...editedUser,
+                            password: e.target.value,
+                          })
+                        }
+                      />
+                    ) : user.showPassword ? (
+                      user.password
+                    ) : (
+                      "*".repeat(user.password.length)
+                    )}
+                  </td>
                   <td>
                     <FaUserCog className="biometric-icon" />
                   </td>
                   <td className="actions">
-                    <FaUserEdit className="edit" />
-                    <FaEye className="view" />
-                    <FaTrashAlt className="delete" />
+                    {editingUserId === user.id ? (
+                      <button onClick={handleSave}>Save</button>
+                    ) : (
+                      <>
+                        <FaUserEdit
+                          className="edit"
+                          onClick={() => handleEdit(user)}
+                        />
+                        <FaEye
+                          className="view"
+                          onClick={() => togglePasswordVisibility(user.id)}
+                        />
+                        <FaTrashAlt
+                          className="delete"
+                          onClick={() => handleDelete(user.id)}
+                        />
+                      </>
+                    )}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         )}
-        {selectedTab === "Create" && (
-          <UserCreate/>
-        )}
+        {selectedTab === "Create" && <UserCreate />}
       </div>
       <button className="back-btn">Back</button>
     </>
