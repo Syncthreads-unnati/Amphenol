@@ -1,0 +1,231 @@
+.record-setting {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    // width: 600px;
+    margin: 1em;
+  
+    // Left green border
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: #8bc34a;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  
+    &__title {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+      color: #4B4B4B;
+    }
+    &__tabchange-button{
+        padding: 0.4em 1em;
+        background: #DBE1D6;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        display: flex;
+        button{
+            padding: 0.4em 1em;
+            background: inherit;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:0.3em;
+            &.active {
+                background-color: white;
+                color: black;
+                // border-color: #007bff;
+            }
+        }
+    }
+    &__top-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+  
+      &.active{
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+      }
+    }
+  
+    .status {
+      margin-left: auto;
+      padding: 0.5em 1.5em;
+      background: #F2F8FD;
+      border-radius: 6px;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.02em;
+      &.connected{
+        color: black;
+      }
+      &.not-connected{
+        color: #d32f2f;
+      }
+
+      &-dot {
+        color: #d32f2f;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      &-connected {
+        color: black;
+        width: 10px;
+        height: 10px;
+        background-color: green;
+        border-radius: 50%;
+      }
+    }
+  
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 10px;
+    }
+  
+    &__row {
+      display: flex;
+      gap: 16px;
+    }
+  
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+  
+      label {
+        font-size: 14px;
+        color: #555;
+      }
+  
+      input[type="date"],
+      input[type="file"],
+      input[type="text"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+    }
+    .custom-file-upload {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+        gap: 10px; /* add space between button and folder name */
+      }
+      
+      .custom-file-upload input[type="file"] {
+        position: relative; /* no need to absolute now */
+        opacity: 0;
+        width: 100px; /* control the button size */
+        cursor: pointer;
+        z-index: 0;
+      }
+      
+      /* This will be the "Choose Files" button */
+      .custom-file-upload::before {
+        content: 'Choose Folder';
+        display: inline-block;
+        background: #007bff;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 1;
+      }
+      
+      /* Folder name text */
+      .file-name {
+        flex-grow: 1;
+        color: #666;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    .destination {
+      .destination-input {
+        display: flex;
+        gap: 10px;
+  
+        input {
+          flex: 1;
+        }
+  
+        button {
+          padding: 8px 12px;
+          background: #f1f1f1;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+  
+    .copy-btn {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      
+      &.delete-btn{
+        background-color: #FF0000;
+      }
+
+      &:hover {
+        background-color: #0069d9;
+      }
+    }
+  }

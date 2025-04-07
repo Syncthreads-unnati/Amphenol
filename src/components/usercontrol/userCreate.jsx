@@ -5,11 +5,13 @@ import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import ErrorIcon from "@mui/icons-material/ErrorOutline";
+import { userTypes } from "../../constants/adminconstant";
 
 const UserCreate = () => {
   const [email, setEmail] = useState("vishalsingh@amphenol.in");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [userType, setUserType] = useState("");
   const [errors, setErrors] = useState({});
   const [biometric, setBiometric] = useState(false);
   const [biometricSubmitted, setBiometricSubmitted] = useState(false);
@@ -32,7 +34,9 @@ const UserCreate = () => {
     } else if (email === "vishalsingh@amphenol.in") {
       newErrors.email = "User already Exist";
     }
-
+    if (!userType.trim()) {
+      newErrors.userType = "User type is required.";
+    }
     // Password validation
     if (!password.trim()) {
       newErrors.password = "Password is required.";
@@ -103,7 +107,21 @@ const UserCreate = () => {
               />
               {errors.email && <p className="error">{errors.email}</p>}
             </div>
-
+            <div className="input-group">
+              <label>User Type</label>
+              <select
+                value={userType}
+                onChange={(e) => setUserType(e.target.value)}
+              >
+                <option value="">Select User Type</option>
+                {userTypes.map((type, index) => (
+                  <option key={index} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+              {errors.userType && <p className="error">{errors.userType}</p>}
+            </div>
             <div className="input-group password-group">
               <label>Password</label>
               <div className="password-wrapper">
@@ -156,7 +174,10 @@ const UserCreate = () => {
                 />
               ))}
             </div>
-            <button className="btn-primary btn-submit" onClick={handleBiometricSubmit}>
+            <button
+              className="btn-primary btn-submit"
+              onClick={handleBiometricSubmit}
+            >
               Submit
             </button>
           </div>

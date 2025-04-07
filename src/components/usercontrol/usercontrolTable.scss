@@ -7,7 +7,7 @@
     margin: 2.5em;
     width: auto;
     // max-width: 900px;
-    .header{
+    &__header{
       display: flex;
       flex-direction: column;
       gap: 1em;
@@ -20,7 +20,7 @@
     .sub-tab-buttons {
       display: flex;
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
       justify-content: flex-start;
       gap: 2em;
       margin-bottom: 20px;
@@ -95,51 +95,51 @@
     }
   }
   
-  .create-user {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
+  // .create-user {
+  //   background: #fff;
+  //   padding: 20px;
+  //   border-radius: 10px;
+  //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  //   width: 90%;
+  //   max-width: 500px;
   
-    h3 {
-      margin-bottom: 15px;
-      text-align: center;
-    }
+  //   h3 {
+  //     margin-bottom: 15px;
+  //     text-align: center;
+  //   }
   
-    form {
-      display: flex;
-      flex-direction: column;
+  //   form {
+  //     display: flex;
+  //     flex-direction: column;
   
-      label {
-        margin-top: 10px;
-        font-weight: bold;
-      }
+  //     label {
+  //       margin-top: 10px;
+  //       font-weight: bold;
+  //     }
   
-      input, select {
-        padding: 8px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
+  //     input, select {
+  //       padding: 8px;
+  //       margin-top: 5px;
+  //       border: 1px solid #ccc;
+  //       border-radius: 5px;
+  //     }
   
-      button {
-        margin-top: 15px;
-        padding: 10px;
-        border: none;
-        background-color: #91a33a;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
+  //     button {
+  //       margin-top: 15px;
+  //       padding: 10px;
+  //       border: none;
+  //       background-color: #91a33a;
+  //       color: white;
+  //       font-size: 16px;
+  //       cursor: pointer;
+  //       border-radius: 5px;
   
-        &:hover {
-          background-color: #7a8b29;
-        }
-      }
-    }
-  }
+  //       &:hover {
+  //         background-color: #7a8b29;
+  //       }
+  //     }
+  //   }
+  // }
 
   // User create
   .login-container {
@@ -155,7 +155,16 @@
       gap: 5px;
       position: relative;
       min-height: 50px; // Ensures consistent space even when error shows
-    
+      
+      select {
+        background-color: #fff;
+        appearance: none; /* removes default arrow */
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+        cursor: pointer;
+      }
       .error {
         position: absolute;
         bottom: -18px; // Places the error below input without breaking layout
@@ -179,6 +188,18 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 14px;
+      }
+      input,select {
+        padding: 0.5rem 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: #007bff;
+        }
       }
   
       .error {
@@ -258,7 +279,6 @@
   // Biometric 
   
   .biometric{
-    width:15%;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -283,14 +303,14 @@
   }
   // submit button
   .btn-primary {
-    width:30%;
     color: white;
-    padding: 10px 4em;
+    padding: 0.8em;
     border: none;
     border-radius: 6px;
     font-size: 14px;
     cursor: pointer;
     transition: 0.3s;
+    letter-spacing: 0.1em;
      &.biometric{
       background-color: #1a56db;
       &:hover {
@@ -304,6 +324,8 @@
       }
     }
     &.create-user{
+      padding-inline: 4em;
+      padding-block: 0.8em;
       background-color: #7B8256;
     }
   }

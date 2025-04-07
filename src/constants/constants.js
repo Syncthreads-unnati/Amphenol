@@ -449,42 +449,4 @@ export const cardData = [
   },
 ];
 
-export const usersdata = [
-  {
-    id: 1,
-    name: "admin",
-    type: "Admin",
-    password: "12345",
-    showPassword: false,
-  },
-  {
-    id: 2,
-    name: "guest",
-    type: "Guest",
-    password: "guest123",
-    showPassword: false,
-  },
-  { id: 3, name: "Naveen Sharma", type: "Admin", password: "12345", showPassword: false, },
-  { id: 4, name: "Niraj Shah", type: "Operator", password: "12345", showPassword: false, },
-  {
-    id: 5,
-    name: "Vijay Verma",
-    type: "Operator",
-    password: "12345",
-    showPassword: false,
-  },
-  {
-    id: 6,
-    name: "Abhijeet Patil",
-    type: "Operator",
-    password: "12345",
-    showPassword: false,
-  },
-  {
-    id: 7,
-    name: "Sunil Gavde",
-    type: "Operator",
-    password: "12345",
-    showPassword: false,
-  },
-];
+

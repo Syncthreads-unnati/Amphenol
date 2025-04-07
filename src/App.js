@@ -5,6 +5,7 @@ import History from "./pages/history/history";
 import Dashboard from "./pages/dashboard/dashboard";
 import UserControl from "./pages/admin/adminDashboard";
 import UserControlTable from "./components/usercontrol/usercontrolTable";
+import SystemControl from "./components/systemControl/systemcontrol";
 
 function ErrorPage() {
   React.useEffect(() => {
@@ -34,7 +35,9 @@ const appRouter = createBrowserRouter([
         element: <UserControl/>,
       },
       { path: "/history", element: <History /> },
-      {path: "/usertable", element: <UserControlTable/>}
+      {path: "/usertable", element: <UserControlTable/>},
+      {path: "/systemcontrol", element: <SystemControl/>}
+
     ],
   },
 ]);

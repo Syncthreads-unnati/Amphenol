@@ -8,6 +8,9 @@ const UserControl = () => {
   const handleusercontrol =()=>{
     navigate("/usertable")
   }
+  const handleSystemControl =()=>{
+    navigate("/systemcontrol")
+  }
 
   return (
     <div className="user-control-container">
@@ -15,7 +18,7 @@ const UserControl = () => {
         <button onClick={() => handleusercontrol()}>
           <FaUserCog className="icon" /> User Control
         </button>
-        <button>
+        <button onClick={() => handleSystemControl()}>
           <FaDesktop className="icon" /> System Control
         </button>
       </div>

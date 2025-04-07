@@ -1,6 +1,6 @@
 import { FaUserCog, FaUserEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import { useState } from "react";
-import { usersdata } from "../../constants/constants";
+import { usersdata } from "../../constants/adminconstant";
 import list from "../../assets/image/list.png";
 import "./usercontrolTable.scss";
 import UserCreate from "./userCreate";
@@ -41,7 +41,7 @@ const UserControlTable = () => {
   return (
     <>
       <div className="user-list">
-        <div className="header">
+        <div className="user-list__header">
           <h3>
             <FaUserCog className="icon" /> User Control
           </h3>
@@ -61,6 +61,12 @@ const UserControlTable = () => {
               onClick={() => setSelectedTab("Create")}
             >
               + Create
+            </button>
+            <button
+              // className={selectedTab === "Create" ? "active" : ""}
+              // onClick={() => setSelectedTab("Create")}
+            >
+              User
             </button>
           </div>
         </div>
