@@ -12,17 +12,20 @@ const RecordSetting = () => {
   const [files, setFiles] = useState([]);
   const [folderName, setFolderName] = useState("");
   const [pendriveConnected, setPendriveConnected] = useState(true);
-  const [destinationPath, setDestinationPath] = useState("E:/Defect_Images");
+  const [destinationPath, setDestinationPath] = useState("C:\\Users\\unnat\\Desktop\\copy");
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
-
+  
     if (selectedFiles.length > 0) {
       // Get the full relative path of the first file
       const firstFilePath = selectedFiles[0].webkitRelativePath;
       // Extract the folder name (everything before the first '/')
       const folder = firstFilePath.split("/")[0];
       setFolderName(folder);
+  
+      // *** Missing line: Set the files into state ***
+      setFiles(selectedFiles);
     }
   };
 
@@ -134,8 +137,8 @@ const RecordSetting = () => {
             <input
               type="file"
               multiple
-              webkitdirectory="true"
-              directory="true"
+              webkitdirectory
+              directory
               onChange={handleFileChange}
             />
             <span className="file-name">
@@ -144,7 +147,7 @@ const RecordSetting = () => {
           </label>
         </div>
 
-        {tabChange == "Copy Data" && (
+        {tabChange === "Copy Data" && (
           <div className="record-setting__field destination">
             <label>Destination Path</label>
             <div className="destination-input">
@@ -156,16 +159,16 @@ const RecordSetting = () => {
 
         <button
           className={`${
-            tabChange == "Copy Data" ? "copy-btn" : "copy-btn delete-btn"
+            tabChange === "Copy Data" ? "copy-btn" : "copy-btn delete-btn"
           }`}
           onClick={handleCopy}
         >
-          {tabChange == "Copy Data" ? (
+          {tabChange === "Copy Data" ? (
             <img src={tabler_copy_white} alt="copy" />
           ) : (
             <img src={delete_button_white} alt="delete" />
           )}
-          {tabChange == "Copy Data" ? "Copy" : "Delete"}
+          {tabChange === "Copy Data" ? "Copy" : "Delete"}
         </button>
       </div>
     </div>
