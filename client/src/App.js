@@ -6,6 +6,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 import UserControl from "./pages/admin/adminDashboard";
 import UserControlTable from "./components/usercontrol/usercontrolTable";
 import SystemControl from "./components/systemControl/systemcontrol";
+import Login from "./components/login/login";
 
 function ErrorPage() {
   React.useEffect(() => {
@@ -32,9 +33,9 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <UserControl/>,
+        element: <Login />,
       },
-      { path: "/history", element: <History /> },
+      {path: "/history", element: <History />},
       {path: "/usertable", element: <UserControlTable/>},
       {path: "/systemcontrol", element: <SystemControl/>}
 
