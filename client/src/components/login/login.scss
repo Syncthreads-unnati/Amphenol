@@ -1,50 +1,51 @@
 .login-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    // background: #f8f8f8 url('/path-to-your-background.svg') no-repeat center/cover;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f8f6;
+    // background-image: url('/path/to/your/background.svg'); // if you want background patterns
+    background-size: cover;
   }
   
   .login-card {
     background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
+    padding: 40px 30px;
+    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
     text-align: center;
-    width: 320px;
     position: relative;
   }
   
-  .login-icon {
-    background: #d2e980;
-    width: 60px;
-    height: 60px;
+  .login-avatar {
+    background: #a6ce39;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    margin: -50px auto 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 28px;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+  }
+  
+  .avatar-icon {
     color: white;
+    font-size: 30px;
   }
   
   .login-form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
   
   .input-group {
     position: relative;
-    margin-bottom: 1rem;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 10px 40px 10px 35px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
   }
   
   .input-icon {
@@ -52,7 +53,7 @@
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    color: #9db33c;
+    color: #a6ce39;
   }
   
   .toggle-password {
@@ -60,81 +61,75 @@
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
+    color: gray;
     cursor: pointer;
-    color: #9db33c;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 35px 12px 35px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
   }
   
   .login-btn {
-    background: #9db33c;
+    background: #a6ce39;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
     font-weight: bold;
-  }
-  
-  .login-btn:hover {
-    background: #8aad2a;
+    cursor: pointer;
   }
   
   .login-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
-    margin-top: 1rem;
+    font-size: 14px;
   }
   
-  .login-options a {
-    color: #007bff;
+  .forgot-password {
+    color: #2f80ed;
     text-decoration: none;
   }
   
-  .login-options a:hover {
-    text-decoration: underline;
-  }
-  
   .divider {
-    margin: 1.5rem 0;
-    position: relative;
     text-align: center;
-    font-size: 0.9rem;
-    color: #999;
+    margin: 20px 0;
+    position: relative;
   }
   
-  .divider::before, .divider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 40%;
-    height: 1px;
-    background: #ccc;
+  .divider span {
+    background: #fff;
+    padding: 0 10px;
+    color: gray;
+    position: relative;
+    z-index: 1;
   }
   
   .divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
     left: 0;
-  }
-  
-  .divider::after {
-    right: 0;
+    z-index: 0;
   }
   
   .fingerprint-login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #007bff;
     cursor: pointer;
+    color: #2f80ed;
   }
   
-  .fingerprint-login i {
-    font-size: 2rem;
-  }
-  
-  .fingerprint-login p {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
+  .fingerprint-icon {
+    font-size: 40px;
   }
   

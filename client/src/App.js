@@ -7,6 +7,7 @@ import UserControl from "./pages/admin/adminDashboard";
 import UserControlTable from "./components/usercontrol/usercontrolTable";
 import SystemControl from "./components/systemControl/systemcontrol";
 import Login from "./components/login/login";
+import FingerprintLogin from "./components/fingerprintlogin/fingerprintlogin";
 
 function ErrorPage() {
   React.useEffect(() => {
@@ -35,6 +36,9 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: <Login />,
       },
+      {path: "/fingerprintlogin", element: <FingerprintLogin />},
+      {path: "/usercontrol", element: <UserControl />},
+      {path: "/dashboard", element: <Dashboard />},
       {path: "/history", element: <History />},
       {path: "/usertable", element: <UserControlTable/>},
       {path: "/systemcontrol", element: <SystemControl/>}
