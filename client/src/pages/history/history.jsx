@@ -11,9 +11,12 @@ import PieChartSummaryComponent from "../../components/pieChartComponent/piechar
 import SummarygraphChart from "../../components/summarygraphchart/summarygraphchart";
 import BargraphSummaryComponent from "../../components/bargraphComponent/bargraphSummaryComponent";
 import ComponentDashboard from "../../components/componant-dashboard/component-dashboard";
+import zoom from "../../assets/image/zoom.png";
+import "./history.scss";
+
 const History = () => {
   const [activeTab, setActiveTab] = useState("list");
-
+  const [zoomin,setZoomin] = useState(false);
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -21,11 +24,14 @@ const History = () => {
         <HistoryDashboard />
       </div>
       {(activeTab === "list" || activeTab === "item") && <LotCardComponent />}
+      <div className="header-toggle-div">
+       <img src={zoom} alt="zoom" onClick={setZoomin(!zoomin)}/>
       <ToggleButton
         toggledata={historytoggleData}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
+      </div>
       {activeTab === "list" && <TableComponent />}
       {activeTab === "pie chart" && (
         <>

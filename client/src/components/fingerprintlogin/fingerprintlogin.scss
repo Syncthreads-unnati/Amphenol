@@ -1,79 +1,77 @@
-.login-container {
+.fingerprint {
+  .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    // background-image: url('../../assets/image/Login-screen.png'); // if you want background patterns
     background-color: #f7f7f7;
   }
-  
+
   .login-card {
     background: #fff;
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-block: 5rem;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 320px;
+    width: 40%;
   }
-  
+
   .login-title {
     font-size: 1.5rem;
-    color: #0078d7;
+    color: #246fff;
     margin-bottom: 0.5rem;
   }
-  
-  .login-subtitle {
-    color: #6c757d;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+  .fingerprint-login{
+
+    .fingerprint-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // margin: 0 auto 20px auto;
+      img {
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+      }
+    }
   }
-  
-  .fingerprint-icon img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-  }
-  
+
   .divider {
     display: flex;
     align-items: center;
-    text-align: center;
-    margin: 1.5rem 0;
-  
-    &::before,
-    &::after {
-      content: '';
-      flex: 1;
-      border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin: 1rem 0;
+
+    .line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #ccc;
     }
-  
-    &::before {
-      margin-right: 0.5em;
-    }
-  
-    &::after {
-      margin-left: 0.5em;
-    }
-  
-    span {
-      font-size: 0.85rem;
-      color: #6c757d;
+
+    .text {
+      margin: 0 1rem;
+      color: #777;
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
   }
-  
   .login-button {
-    background-color: #0078d7;
-    color: #fff;
+    // background-color: #0078d7;
+    color: #6c757d;
     border: none;
     padding: 0.75rem 1rem;
     border-radius: 8px;
     width: 100%;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
-  
-    &:hover {
-      background-color: #005bb5;
-    }
+    text-align: center;
   }
-  
+}
+
+.login-subtitle {
+  color: #6c757d;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+}

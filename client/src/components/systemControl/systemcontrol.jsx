@@ -4,10 +4,14 @@ import "./systemcontrol.scss";
 import HealthParameters from "./healthParameter";
 import RecordSetting from "./RecordSettings";
 import NetworkSetting from "./networkSetting";
+import { useNavigate } from "react-router";
 
 const SystemControl = () => {
   const [connectivity, setConnectivity] = useState("On");
-
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate(-1);
+  }
   const handleChange = (e) => {
     setConnectivity(e.target.value);
   };
@@ -17,7 +21,7 @@ const SystemControl = () => {
         <div className="title">
           <span className="icon">
             <img src={systemSetting} alt="systemSetting" />
-          </span>{" "}
+          </span>
           System Control
         </div>
         <div className="maintenance">
@@ -63,6 +67,11 @@ const SystemControl = () => {
           onChange={() => {}}
         />
         </div>
+      </div>
+      <div className="bottom-buttondiv">
+        <button className="bottom-button __back-button" onClick={()=>handleBack()}>Back</button>
+        <button className="bottom-button __save-setting">Save Settings</button>
+        <button className="bottom-button __bottom-reset">Reset</button>
       </div>
     </div>
   );

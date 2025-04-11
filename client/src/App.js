@@ -1,57 +1,34 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./pages/navbar/navbar";
-import History from "./pages/history/history";
-import Dashboard from "./pages/dashboard/dashboard";
-import UserControl from "./pages/admin/adminDashboard";
-import UserControlTable from "./components/usercontrol/usercontrolTable";
-import SystemControl from "./components/systemControl/systemcontrol";
-import Login from "./components/login/login";
-import FingerprintLogin from "./components/fingerprintlogin/fingerprintlogin";
-
-function ErrorPage() {
-  React.useEffect(() => {
-    window.location.replace("/"); // Redirect to home page
-  }, []);
-
-  return null;
-}
+import appRouter from "./appRouter";
 
 // Layout component to include Navbar once
-const Layout = () => (
-  <>
-    <Navbar />
-    <Outlet /> 
-  </>
-);
+export function Layout() {
+  const location = useLocation();
 
-// Define routes
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Login />,
-      },
-      {path: "/fingerprintlogin", element: <FingerprintLogin />},
-      {path: "/usercontrol", element: <UserControl />},
-      {path: "/dashboard", element: <Dashboard />},
-      {path: "/history", element: <History />},
-      {path: "/usertable", element: <UserControlTable/>},
-      {path: "/systemcontrol", element: <SystemControl/>}
+  // List of paths where Navbar should NOT be shown
+  const noNavbarPaths = ["/"];
 
-    ],
-  },
-]);
+  const shouldShowNavbar = !noNavbarPaths.includes(location.pathname);
+  return (
+    <>
+      {shouldShowNavbar && <Navbar />}
+      <Outlet />
+    </>
+  );
+}
 
 function App() {
-  // Redirect to "/" if the user reloads on another path
-  if (window.location.pathname !== "/") {
-    window.location.replace("/");
-  }
+  // // Redirect to "/" if the user reloads on another path
+  // if (window.location.pathname !== "/") {
+  //   window.location.replace("/");
+  // }
 
   return <RouterProvider router={appRouter} />;
 }

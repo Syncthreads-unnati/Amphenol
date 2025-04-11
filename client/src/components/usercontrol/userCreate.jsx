@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import ErrorIcon from "@mui/icons-material/ErrorOutline";
 import { userTypes } from "../../constants/adminconstant";
-
+import  "./userCreate.scss";
 const UserCreate = () => {
   const [email, setEmail] = useState("vishalsingh@amphenol.in");
   const [password, setPassword] = useState("");
@@ -94,7 +94,7 @@ const UserCreate = () => {
 
   return (
     <>
-      <form className="login-container" onSubmit={handleSubmit}>
+      <form className="usercraete-container" onSubmit={handleSubmit}>
         {!biometric && (
           <>
             <div className="input-group">

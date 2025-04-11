@@ -4,8 +4,10 @@ import { usersdata } from "../../constants/adminconstant";
 import list from "../../assets/image/list.png";
 import "./usercontrolTable.scss";
 import UserCreate from "./userCreate";
+import { useNavigate } from "react-router";
 
 const UserControlTable = () => {
+  const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState("List");
   const [users, setUsers] = useState(usersdata);
   const [editingUserId, setEditingUserId] = useState(null);
@@ -38,6 +40,10 @@ const UserControlTable = () => {
     );
   };
 
+  const handleBack = () => {
+    navigate(-1);
+  }
+
   return (
     <>
       <div className="user-list">
@@ -61,12 +67,6 @@ const UserControlTable = () => {
               onClick={() => setSelectedTab("Create")}
             >
               + Create
-            </button>
-            <button
-              // className={selectedTab === "Create" ? "active" : ""}
-              // onClick={() => setSelectedTab("Create")}
-            >
-              User
             </button>
           </div>
         </div>
@@ -157,7 +157,7 @@ const UserControlTable = () => {
         )}
         {selectedTab === "Create" && <UserCreate />}
       </div>
-      <button className="back-btn">Back</button>
+      <button className="back-btn" onClick={()=>handleBack()} >Back</button>
     </>
   );
 };

@@ -180,4 +180,48 @@
     border-radius: 5px 0 0 5px;
   }
   
+  .bottom-buttondiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+    margin-block: 2em;
+    .bottom-button{
+      // background-color: #007bff;
+      color: white;
+      border: none;
+      padding-inline: 3em;
+      padding-block: 0.8em;
+      border-radius: 6px;
+      font-size: 1em;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+      &.__back-button{
+        background-color: #4D4D4D;
+        &:hover {
+          background-color: #5a6268;
+        }
+
+      }
+      &.__save-setting{
+        background-color: #246FFF;
+        &:hover {
+          background-color: #1f95f0;
+        }
+
+      }
+      &.__bottom-reset{
+        background-color: #FF0000;
+        &:hover {
+          background-color: #f8554f;
+        }
+
+      }
+    }
+  }
   

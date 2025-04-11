@@ -3,14 +3,16 @@ import history from "../../assets/image/history.png";
 import setting from "../../assets/image/setting.png";
 import logo from "../../assets/image/logo.png";
 import battery from "../../assets/image/battery.png";
-
-import "./navbar.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import "./navbar.scss";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const [tab, setTab] = useState("live");
   const navigate = useNavigate();
+  const [tab, setTab] = useState("live");
+  const { user } = useSelector((state) => state.auth);
+
   const handleTabChange = (value) => {
     setTab(value);
     if (value == "live") {
@@ -20,6 +22,11 @@ const Navbar = () => {
     }
   };
 
+  const handleLogout = () => {
+    // Perform logout logic here (e.g., clear tokens, redirect to login page)
+    navigate("/"); // Redirect to login page
+  };
+
   return (
     <nav className="navbar">
       <nav className="nav-icon">
@@ -27,7 +34,8 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
         <nav className="nav-left">
-          <button
+          {user.userName != "admin" && (
+            <><button
             className={tab == "live" ? `click-btn` : `nav-item`}
             onClick={() => handleTabChange("live")}
           >
@@ -43,6 +51,8 @@ const Navbar = () => {
             <img src={history} alt="history" />
             <span>History</span>
           </button>
+          </>
+          )}
           <button
             className={tab == "setting" ? `click-btn` : `nav-item`}
             onClick={() => handleTabChange("setting")}
@@ -52,8 +62,12 @@ const Navbar = () => {
           </button>
         </nav>
       </nav>
+      {user.userName == "admin" && <nav className="nav-center">ADMINISTARTION</nav>}
+
       <nav className="nav-right">
-        <div className="user-badge">NV</div>
+        <div className="user-badge" onClick={() => handleLogout()}>
+          NV
+        </div>
         <div className="battery-icon">
           <img src={battery} alt="battery" />
         </div>

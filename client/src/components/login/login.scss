@@ -1,135 +1,203 @@
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #f5f8f6;
-    // background-image: url('/path/to/your/background.svg'); // if you want background patterns
-    background-size: cover;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  // background: #f0f2f5;
+background-image: url('../../assets/image/Login-screen.png'); // if you want background patterns
   .login-card {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .login-avatar {
-    background: #a6ce39;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 20px auto;
-    position: absolute;
-    top: -35px;
-    left: 0;
-    right: 0;
-  }
-  
-  .avatar-icon {
-    color: white;
-    font-size: 30px;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .input-group {
-    position: relative;
-  }
-  
-  .input-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #a6ce39;
-  }
-  
-  .toggle-password {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: gray;
-    cursor: pointer;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 12px 35px 12px 35px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-  }
-  
-  .login-btn {
-    background: #a6ce39;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .login-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-  }
-  
-  .forgot-password {
-    color: #2f80ed;
-    text-decoration: none;
-  }
-  
-  .divider {
-    text-align: center;
-    margin: 20px 0;
-    position: relative;
-  }
-  
-  .divider span {
-    background: #fff;
-    padding: 0 10px;
-    color: gray;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 1px;
-    background: #ccc;
-    left: 0;
-    z-index: 0;
-  }
-  
-  .fingerprint-login {
+    background: white;
+    padding-inline: 2rem;
+    padding-block: 5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
-    color: #2f80ed;
+    position: relative;
+    .login-avatar {
+      margin-bottom: 1.5rem;
+      position: absolute;
+      top: -10%;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    }
+
+    .login-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          // left: 10px;
+          transform: translateY(-50%);
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        input {
+          width: 100%;
+          padding: 1em 1em 1em 4em;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          outline: none;
+          font-size: 1rem;
+        }
+
+        .password-toggle {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          cursor: pointer;
+          color: #555;
+          font-size: 1.2rem;
+        }
+      }
+
+      .login-btn {
+        background-color: #8da811;
+        color: black;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #8da811;
+        }
+      }
+
+      .login-options {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: #555;
+
+        .remember-me {
+          display: flex;
+          align-items: center;
+
+          input {
+            margin-right: 5px;
+          }
+        }
+
+        .forgot-password {
+          text-decoration: none;
+          color: #007bff;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        margin: 1.5rem 0;
+
+        .line {
+          flex: 1;
+          height: 1px;
+          background-color: #ccc;
+        }
+
+        .text {
+          margin: 0 10px;
+          font-size: 0.9rem;
+          color: #888;
+        }
+      }
+
+      .fingerprint-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        margin-top: 1rem;
+        gap: 1rem;
+        .fingerprint-icon {
+          font-size: 2.5rem;
+          color: #555;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: #555;
+        }
+
+        &:hover {
+          .fingerprint-icon {
+            color: #007bff;
+          }
+          p {
+            color: #007bff;
+          }
+        }
+      }
+    }
+  }
+  .snackbar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    z-index: 1000;
+    opacity: 0.95;
+    animation: slideUp 0.4s ease, fadeOut 0.4s ease 2.6s;
+  
+    &.success {
+      background-color: #4CAF50; // green
+    }
+  
+    &.error {
+      background-color: #f44336; // red
+    }
   }
   
-  .fingerprint-icon {
-    font-size: 40px;
+  @keyframes slideUp {
+    from {
+      transform: translate(-50%, 100px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, 0);
+      opacity: 0.95;
+    }
   }
   
+  @keyframes fadeOut {
+    from {
+      opacity: 0.95;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
